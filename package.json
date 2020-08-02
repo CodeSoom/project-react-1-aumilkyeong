@@ -4,18 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://aumilkyeong@github.com/aumilkyeong/project-react-1-aumilkyeong.git"
+    "start": "webpack-dev-server",
+    "test:unit": "jest",
+    "coverage": "npm run test:unit -- --coverage",
+    "test:e2e": "codeceptjs run --steps",
+    "test": "npm run coverage && start-server-and-test start http://localhost:8080 test:e2e",
+    "lint": "eslint --ext js,jsx ."
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/aumilkyeong/project-react-1-aumilkyeong/issues"
-  },
-  "homepage": "https://github.com/aumilkyeong/project-react-1-aumilkyeong#readme",
   "devDependencies": {
     "@babel/core": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
@@ -30,5 +27,9 @@
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
