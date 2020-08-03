@@ -39,6 +39,11 @@
   },
   "dependencies": {
     "@codeceptjs/configure": "^0.5.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-regular-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-naver-maps": "0.0.13"
