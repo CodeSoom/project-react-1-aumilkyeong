@@ -27,6 +27,10 @@ const NavBar = styled.nav({
       },
     },
   },
+  '& button': {
+    background: 'none',
+    border: 'none',
+  },
   '@media (max-width: 768px)': {
     '.navbar': {
       flexDirection: 'column',

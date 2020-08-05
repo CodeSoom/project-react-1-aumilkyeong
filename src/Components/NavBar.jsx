@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Global } from '@emotion/core';
 
-import { faWalking } from '@fortawesome/free-solid-svg-icons';
+import { faWalking, faForward } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Style from '../Style/NavBar';
@@ -29,6 +29,11 @@ export default function NavBar() {
         <div className="navbar-logo">
           <FontAwesomeIcon icon={faWalking} color="#d49466" />
           <a href="/">Sanchack: Random Street</a>
+        </div>
+        <div className="navbar-forward">
+          <button type="button">
+            <FontAwesomeIcon icon={faForward} size="2x" color="#d49466" />
+          </button>
         </div>
         <ul className="navbar-menu">
           {menuList.map((menu) => (
