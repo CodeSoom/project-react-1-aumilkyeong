@@ -20,7 +20,7 @@ export default function MapContainer() {
           mapDivId="panorama"
           style={{
             width: '100vw',
-            height: '100vh',
+            height: '92vh',
           }}
           defaultCenter={{ lat: latitude, lng: longitude }}
           defaultZoom={10}
