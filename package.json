@@ -49,6 +49,8 @@
     "@reduxjs/toolkit": "^1.4.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-naver-maps": "0.0.13"
+    "react-naver-maps": "0.0.13",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5"
   }
 }
