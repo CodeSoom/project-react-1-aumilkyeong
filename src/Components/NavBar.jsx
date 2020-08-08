@@ -7,6 +7,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Style from '../Style/NavBar';
 
+function ForwardButton({ onClick }) {
+  return (
+    <div className="navbar-forward">
+      <button type="button" onClick={onClick}>
+        <FontAwesomeIcon icon={faForward} size="2x" color="#d49466" />
+      </button>
+    </div>
+  );
+}
+
 const initStyle = {
   '& body': {
     margin: 0,
@@ -30,11 +40,7 @@ export default function NavBar() {
           <FontAwesomeIcon icon={faWalking} color="#d49466" />
           <a href="/">Sanchack: Random Street</a>
         </div>
-        <div className="navbar-forward">
-          <button type="button">
-            <FontAwesomeIcon icon={faForward} size="2x" color="#d49466" />
-          </button>
-        </div>
+        <ForwardButton />
         <ul className="navbar-menu">
           {menuList.map((menu) => (
             <li key={menu.id}>
