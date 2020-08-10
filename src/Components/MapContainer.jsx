@@ -49,7 +49,10 @@ export default function MapContainer() {
 
       // TODO: 한국이 아닌 경우도 API 재호출 필요... 한국만 나오게할 더 좋은 방법은?
 
-      const { latLng } = data.location;
+      const latLng = {
+        lat: data.location.latLng.lat(),
+        lng: data.location.latLng.lng(),
+      };
 
       dispatch(setCoordinates(latLng));
     });
