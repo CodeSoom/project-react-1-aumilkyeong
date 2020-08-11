@@ -5,7 +5,7 @@ import { Global } from '@emotion/core';
 import NavBar from './NavBar';
 import MapContainer from './MapContainer';
 
-const global = {
+const base = {
   '& body': {
     margin: 0,
     fontFamily: 'Source Sans Pro',
@@ -15,7 +15,7 @@ const global = {
 export default function App() {
   return (
     <>
-      <Global styles={global} />
+      <Global styles={base} />
       <NavBar />
       <MapContainer />
     </>

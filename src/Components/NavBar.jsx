@@ -5,6 +5,8 @@ import styled from '@emotion/styled';
 import { faWalking, faForward } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import { medias } from '../medias';
+
 const NavbarContainer = styled.nav({
   '.navbar-container': {
     display: 'flex',
@@ -17,11 +19,29 @@ const NavbarContainer = styled.nav({
       color: 'white',
     },
   },
+  [medias.phone]: {
+    '.navbar-container': {
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      padding: '8px 24px',
+    },
+  },
 });
 
 const NavbarLogo = styled.div({
   '.navbar-logo': {
     fontSize: '24px',
+  },
+});
+
+const NavbarTravel = styled.div({
+  '& button': {
+    background: 'none',
+    border: 'none',
+  },
+  [medias.phone]: {
+    alignItems: 'center',
+    width: '100%',
   },
 });
 
@@ -38,22 +58,7 @@ const NavbarMenu = styled.div({
       },
     },
   },
-});
-
-const NavbarTravel = styled.div({
-  '& button': {
-    background: 'none',
-    border: 'none',
-  },
-});
-
-const avbar = styled.nav({
-  '@media (max-width: 768px)': {
-    '.navbar': {
-      flexDirection: 'column',
-      alignItems: 'flex-start',
-      padding: '8px 24px',
-    },
+  [medias.phone]: {
     '.navbar-menu': {
       flexDirection: 'column',
       alignItems: 'center',
