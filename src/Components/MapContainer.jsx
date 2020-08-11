@@ -31,23 +31,22 @@ export default function MapContainer() {
     lng: longitude,
   };
 
-  const onLoad = (streetViewService) => {
-    streetViewService.getPanorama({
+  function fetchPanorama(streetViewService) {
+    const panoramaOptions = {
       location: center,
       preference: 'best',
-      radius: 5000,
-    }, (data, status) => {
-      // TODO: api 응답 직접 찍어보기
+      radius: 50000, // meters
+    };
+
+    streetViewService.getPanorama(panoramaOptions, (data, status) => {
       console.log(
         'StreetViewService results',
         { data, status },
       );
 
       if (status !== 'OK') {
-        console.log('API 재호출 필요');
+        console.error('result code', status);
       }
-
-      // TODO: 한국이 아닌 경우도 API 재호출 필요... 한국만 나오게할 더 좋은 방법은?
 
       const latLng = {
         lat: data.location.latLng.lat(),
@@ -56,6 +55,10 @@ export default function MapContainer() {
 
       dispatch(setCoordinates(latLng));
     });
+  }
+
+  const onLoad = (streetViewService) => {
+    fetchPanorama(streetViewService);
   };
 
   return (
