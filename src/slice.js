@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { getRandomSpot } from './RandomSpot';
+import { makeRandomSpot } from './RandomSpot';
 
 const { actions, reducer } = createSlice({
   name: 'map',
   initialState: {
-    randomSpot: getRandomSpot('korea'),
+    randomSpot: makeRandomSpot('korea'),
     coordinates: null,
   },
   reducers: {

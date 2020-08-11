@@ -39,10 +39,10 @@ export default function MapContainer() {
     };
 
     streetViewService.getPanorama(panoramaOptions, (data, status) => {
-      console.log(
-        'StreetViewService results',
-        { data, status },
-      );
+      // console.log(
+      //   'StreetViewService results',
+      //   { data, status },
+      // );
 
       if (status !== 'OK') {
         console.error('result code', status);

@@ -1,8 +1,8 @@
-import {
+import coordinates, {
   getRandomBetween,
-  getRandomLongitude,
-  getRandomLatitude,
-  getRandomSpot,
+  makeRandomLongitude,
+  makeRandomLatitude,
+  makeRandomSpot,
 } from './RandomSpot';
 
 test('getRandomBetween', () => {
@@ -14,28 +14,25 @@ test('getRandomBetween', () => {
   expect(result).toBeLessThan(max);
 });
 
-test('getRandomLongitude', () => {
-  const result = getRandomLongitude('korea');
+test('makeRandomLongitude', () => {
+  const result = makeRandomLongitude('korea');
 
-  // TODO: coordinates 객체 export 문제 해결
-  expect(result).toBeGreaterThanOrEqual(125.06666667);
-  expect(result).toBeLessThan(131.87222222);
+  expect(result).toBeGreaterThanOrEqual(coordinates.korea.MIN_LONGITUDE);
+  expect(result).toBeLessThan(coordinates.korea.MAX_LONGITUDE);
 });
 
-test('getRandomLatitude', () => {
-  const result = getRandomLatitude('korea');
+test('makeRandomLatitude', () => {
+  const result = makeRandomLatitude('korea');
 
-  // TODO: coordinates 객체 export 문제 해결
-  expect(result).toBeGreaterThanOrEqual(33.10000000);
-  expect(result).toBeLessThan(38.45000000);
+  expect(result).toBeGreaterThanOrEqual(coordinates.korea.MIN_LATITUDE);
+  expect(result).toBeLessThan(coordinates.korea.MAX_LATITUDE);
 });
 
-test('getRandomSpot', () => {
-  const { latitude, longitude } = getRandomSpot('korea');
+test('makeRandomSpot', () => {
+  const { latitude, longitude } = makeRandomSpot('korea');
 
-  // TODO: coordinates 객체 export 문제 해결
-  expect(latitude).toBeGreaterThanOrEqual(33.10000000);
-  expect(latitude).toBeLessThan(38.45000000);
-  expect(longitude).toBeGreaterThanOrEqual(125.06666667);
-  expect(longitude).toBeLessThan(131.87222222);
+  expect(latitude).toBeGreaterThanOrEqual(coordinates.korea.MIN_LATITUDE);
+  expect(latitude).toBeLessThan(coordinates.korea.MAX_LATITUDE);
+  expect(longitude).toBeGreaterThanOrEqual(coordinates.korea.MIN_LONGITUDE);
+  expect(longitude).toBeLessThan(coordinates.korea.MAX_LONGITUDE);
 });

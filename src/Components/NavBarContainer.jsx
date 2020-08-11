@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { useDispatch, useSelector } from 'react-redux';
+
 import styled from '@emotion/styled';
 
 import { faWalking, faForward } from '@fortawesome/free-solid-svg-icons';
@@ -7,7 +9,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { medias } from '../medias';
 
-const NavbarContainer = styled.nav({
+import { makeRandomSpot } from '../RandomSpot';
+
+import { setRandomSpot } from '../slice';
+
+import { get } from '../utils';
+
+const Navbar = styled.nav({
   '.navbar-container': {
     display: 'flex',
     justifyContent: 'space-between',
@@ -74,22 +82,24 @@ const NavbarMenu = styled.div({
   },
 });
 
-const menuList = [
-  { id: 1, title: 'Home' },
-  { id: 2, title: 'History' },
-  { id: 3, title: 'Gallery' },
-  { id: 4, title: 'FAQ' },
-];
+export default function NavbarContainer() {
+  const dispatch = useDispatch();
+  const currentSpot = useSelector(get('randomSpot'));
+  console.log(currentSpot);
 
-function handleClick() {
-  // TODO: 새로운 장소로 이동
-  console.log('clicked');
-}
+  const menuList = [
+    { id: 1, title: 'Home' },
+    { id: 2, title: 'History' },
+    { id: 3, title: 'Gallery' },
+    { id: 4, title: 'FAQ' },
+  ];
 
-export default function NavBar() {
+  function handleClick() {
+    dispatch(setRandomSpot(makeRandomSpot('korea')));
+  }
   return (
     <>
-      <NavbarContainer>
+      <Navbar>
         <nav className="navbar-container">
           <NavbarLogo>
             <div className="navbar-logo">
@@ -99,7 +109,7 @@ export default function NavBar() {
           </NavbarLogo>
           <NavbarTravel>
             <div className="navbar-travel">
-              <button type="button" onClick={handleClick}>
+              <button type="button" onClick={handleClick} data-testid="travel-button">
                 <FontAwesomeIcon icon={faForward} size="2x" color="#d49466" />
               </button>
             </div>
@@ -114,7 +124,7 @@ export default function NavBar() {
             </ul>
           </NavbarMenu>
         </nav>
-      </NavbarContainer>
+      </Navbar>
     </>
   );
 }

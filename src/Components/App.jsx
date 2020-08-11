@@ -2,7 +2,11 @@ import React from 'react';
 
 import { Global } from '@emotion/core';
 
-import NavBar from './NavBar';
+import { useSelector } from 'react-redux';
+
+import { get } from '../utils';
+
+import NavBarContainer from './NavBarContainer';
 import MapContainer from './MapContainer';
 
 const base = {
@@ -13,11 +17,13 @@ const base = {
 };
 
 export default function App() {
+  const randomSpot = useSelector(get('randomSpot'));
+
   return (
     <>
       <Global styles={base} />
-      <NavBar />
-      <MapContainer />
+      <NavBarContainer />
+      <MapContainer randomSpot={randomSpot} />
     </>
   );
 }
