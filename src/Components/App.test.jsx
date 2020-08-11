@@ -20,7 +20,7 @@ describe('App', () => {
     },
   }));
 
-  it('renders well', () => {
+  it('renders without crash', () => {
     render((
       <App />
     ));
