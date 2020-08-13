@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import styled from '@emotion/styled';
 
@@ -12,8 +12,6 @@ import { medias } from '../medias';
 import { makeRandomSpot } from '../RandomSpot';
 
 import { setRandomSpot } from '../slice';
-
-import { get } from '../utils';
 
 const Navbar = styled.nav({
   '.navbar-container': {
@@ -84,8 +82,6 @@ const NavbarMenu = styled.div({
 
 export default function NavbarContainer() {
   const dispatch = useDispatch();
-  const currentSpot = useSelector(get('randomSpot'));
-  console.log(currentSpot);
 
   const menuList = [
     { id: 1, title: 'Home' },

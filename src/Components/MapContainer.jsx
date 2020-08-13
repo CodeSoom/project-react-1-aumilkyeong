@@ -35,7 +35,7 @@ export default function MapContainer() {
     const panoramaOptions = {
       location: center,
       preference: 'best',
-      radius: 50000, // meters
+      radius: 5000, // meters
     };
 
     streetViewService.getPanorama(panoramaOptions, (data, status) => {
@@ -63,10 +63,10 @@ export default function MapContainer() {
 
   return (
     <LoadScript
-      googleMapsApiKey="AIzaSyCnV3P6n1bq76ebCroUSE0NI4Zuu927QZg"
+      googleMapsApiKey={process.env.GOOGLE_CLOUD_PLATFORM_API_KEY}
     >
       <GoogleMap
-        id="circle-example"
+        id="google-map-container"
         mapContainerStyle={mapContainerStyle}
         zoom={14}
         center={center}
