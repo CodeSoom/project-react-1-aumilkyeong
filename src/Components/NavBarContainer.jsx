@@ -11,7 +11,10 @@ import { medias } from '../medias';
 
 import { makeRandomSpot } from '../RandomSpot';
 
-import { setRandomSpot } from '../slice';
+import {
+  setRandomSpot,
+  setCoordinates,
+} from '../slice';
 
 const Navbar = styled.nav({
   '.navbar-container': {
@@ -91,7 +94,28 @@ export default function NavbarContainer() {
   ];
 
   function handleClick() {
-    dispatch(setRandomSpot(makeRandomSpot('korea')));
+    const nextRandomSpot = makeRandomSpot('korea');
+
+    dispatch(setRandomSpot(nextRandomSpot));
+
+    const service = new window.google.maps.StreetViewService();
+
+    service.getPanorama({
+      location: nextRandomSpot,
+      preference: 'best',
+      radius: 5000, // meters
+    }, (data, status) => {
+      if (status !== 'OK') {
+        console.error('result code', status);
+      }
+
+      const latLng = {
+        lat: data.location.latLng.lat(),
+        lng: data.location.latLng.lng(),
+      };
+
+      dispatch(setCoordinates(latLng));
+    });
   }
   return (
     <>

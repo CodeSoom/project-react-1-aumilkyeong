@@ -19,21 +19,16 @@ export default function MapContainer() {
   const dispatch = useDispatch();
 
   const coordinates = useSelector(get('coordinates'));
-  const { latitude, longitude } = useSelector(get('randomSpot'));
+  const spot = useSelector(get('randomSpot'));
 
   const mapContainerStyle = {
     width: '100%',
     height: '92vh',
   };
 
-  const center = {
-    lat: latitude,
-    lng: longitude,
-  };
-
   function fetchPanorama(streetViewService) {
     const panoramaOptions = {
-      location: center,
+      location: spot,
       preference: 'best',
       radius: 5000, // meters
     };
@@ -69,7 +64,7 @@ export default function MapContainer() {
         id="google-map-container"
         mapContainerStyle={mapContainerStyle}
         zoom={14}
-        center={center}
+        center={spot}
       >
         <StreetViewService
           onLoad={onLoad}

@@ -4,9 +4,15 @@ import { useDispatch } from 'react-redux';
 
 import { render, fireEvent } from '@testing-library/react';
 
+import { initialize } from '@googlemaps/jest-mocks';
+
 import NavBarContainer from './NavBarContainer';
 
 describe('NavBarContainer', () => {
+  beforeEach(() => {
+    initialize();
+  });
+
   function renderNavBarContainer() {
     return render((
       <NavBarContainer />

@@ -29,10 +29,10 @@ test('makeRandomLatitude', () => {
 });
 
 test('makeRandomSpot', () => {
-  const { latitude, longitude } = makeRandomSpot('korea');
+  const { lat, lng } = makeRandomSpot('korea');
 
-  expect(latitude).toBeGreaterThanOrEqual(coordinates.korea.MIN_LATITUDE);
-  expect(latitude).toBeLessThan(coordinates.korea.MAX_LATITUDE);
-  expect(longitude).toBeGreaterThanOrEqual(coordinates.korea.MIN_LONGITUDE);
-  expect(longitude).toBeLessThan(coordinates.korea.MAX_LONGITUDE);
+  expect(lat).toBeGreaterThanOrEqual(coordinates.korea.MIN_LATITUDE);
+  expect(lat).toBeLessThan(coordinates.korea.MAX_LATITUDE);
+  expect(lng).toBeGreaterThanOrEqual(coordinates.korea.MIN_LONGITUDE);
+  expect(lng).toBeLessThan(coordinates.korea.MAX_LONGITUDE);
 });

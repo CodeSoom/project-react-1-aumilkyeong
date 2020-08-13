@@ -25,8 +25,8 @@ export function makeRandomLongitude(country) {
 
 export function makeRandomSpot(country) {
   return {
-    latitude: makeRandomLatitude(country),
-    longitude: makeRandomLongitude(country),
+    lat: makeRandomLatitude(country),
+    lng: makeRandomLongitude(country),
   };
 }
 
