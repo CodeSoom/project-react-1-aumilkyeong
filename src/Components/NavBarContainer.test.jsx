@@ -4,13 +4,25 @@ import { useDispatch } from 'react-redux';
 
 import { render, fireEvent } from '@testing-library/react';
 
-import { initialize } from '@googlemaps/jest-mocks';
-
 import NavBarContainer from './NavBarContainer';
+
+const setupGoogleMock = () => {
+  const google = {
+    maps: {
+      StreetViewService: class {
+        getPanorama() {
+          return jest.fn();
+        }
+      },
+    },
+  };
+
+  global.window.google = google;
+};
 
 describe('NavBarContainer', () => {
   beforeEach(() => {
-    initialize();
+    setupGoogleMock();
   });
 
   function renderNavBarContainer() {
