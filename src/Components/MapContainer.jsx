@@ -38,16 +38,7 @@ export default function MapContainer() {
       radius: 50000, // meters
     };
 
-    streetViewService.getPanorama(panoramaOptions, (data, status) => {
-      // console.log(
-      //   'StreetViewService results',
-      //   { data, status },
-      // );
-
-      if (status !== 'OK') {
-        console.error('result code', status);
-      }
-
+    streetViewService.getPanorama(panoramaOptions, (data) => {
       const latLng = {
         lat: data.location.latLng.lat(),
         lng: data.location.latLng.lng(),

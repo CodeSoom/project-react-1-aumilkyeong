@@ -15,6 +15,8 @@ import { setRandomSpot } from '../slice';
 
 import { get } from '../utils';
 
+const { log: print } = console;
+
 const Navbar = styled.nav({
   '.navbar-container': {
     display: 'flex',
@@ -85,7 +87,8 @@ const NavbarMenu = styled.div({
 export default function NavbarContainer() {
   const dispatch = useDispatch();
   const currentSpot = useSelector(get('randomSpot'));
-  console.log(currentSpot);
+  // TODO: remove this
+  print(currentSpot);
 
   const menuList = [
     { id: 1, title: 'Home' },
