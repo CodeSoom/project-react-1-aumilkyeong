@@ -4,11 +4,10 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        os: [macos-latest, windows-latest, ubuntu-18.04]
         node-version: [14.x]
 
     steps:
