@@ -1,6 +1,8 @@
-# 2R Tracker
+# 2RT
 
-[Reddit Bodyweight Fitness Community](https://www.reddit.com/r/bodyweightfitness/)의 ["권장 루틴"](https://www.reddit.com/r/bodyweightfitness/wiki/kb/recommended_routine) 수행을 도와주는 서비스.
+Recommended Routine Tracker.
+
+[Reddit Bodyweight Fitness Community](https://www.reddit.com/r/bodyweightfitness/)의 ["권장 루틴"](https://www.reddit.com/r/bodyweightfitness/wiki/kb/recommended_routine) 수행을 도와줍니다.
 
 ![enough said](./assets//no-further-details.jpg)
 
