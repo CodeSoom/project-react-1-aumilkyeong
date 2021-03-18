@@ -18,6 +18,9 @@ module.exports = {
   plugins: [
     'react',
   ],
+  globals: {
+    context: 'readonly',
+  },
   rules: {
   },
 };
