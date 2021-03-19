@@ -33,12 +33,4 @@ describe('CheckInContainer', () => {
 
     expect(dispatch).toBeCalled();
   });
-
-  it('triggers check-out mode', () => {
-    const { getByText } = render(<CheckInContainer />);
-
-    fireEvent.click(getByText('Check Out'));
-
-    expect(dispatch).toBeCalled();
-  });
 });

@@ -26,14 +26,6 @@ describe('WorkoutContainer', () => {
     expect(container).toHaveTextContent('workout');
   });
 
-  it('triggers check-in mode', () => {
-    const { getByText } = render(<WorkoutContainer />);
-
-    fireEvent.click(getByText('Check In'));
-
-    expect(dispatch).toBeCalled();
-  });
-
   it('triggers check-out mode', () => {
     const { getByText } = render(<WorkoutContainer />);
 

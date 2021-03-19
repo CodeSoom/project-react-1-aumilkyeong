@@ -33,12 +33,4 @@ describe('CheckOutContainer', () => {
 
     expect(dispatch).toBeCalled();
   });
-
-  it('triggers workout mode', () => {
-    const { getByText } = render(<CheckOutContainer />);
-
-    fireEvent.click(getByText('Workout'));
-
-    expect(dispatch).toBeCalled();
-  });
 });

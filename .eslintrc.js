@@ -20,6 +20,7 @@ module.exports = {
   ],
   globals: {
     context: 'readonly',
+    cy: 'readonly',
   },
   rules: {
   },

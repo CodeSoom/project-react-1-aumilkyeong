@@ -12,3 +12,7 @@ node_modules
 
 ## Jest
 coverage
+
+## Cypress
+cypress/videos 
+cypress/screenshots
