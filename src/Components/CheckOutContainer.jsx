@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import { setCheckInMode } from '../slice';
+import { setMode } from '../slice';
 
 export default function CheckOutContainer() {
   const mode = useSelector((state) => state.mode);
@@ -12,7 +12,7 @@ export default function CheckOutContainer() {
   return (
     <section>
       <h1>{ mode }</h1>
-      <button type="button" onClick={() => dispatch(setCheckInMode())}>Check In</button>
+      <button type="button" onClick={() => dispatch(setMode('check-in'))}>Check In</button>
     </section>
   );
 }

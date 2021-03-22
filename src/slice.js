@@ -6,21 +6,13 @@ const { actions, reducer } = createSlice({
     mode: 'check-in',
   },
   reducers: {
-    setCheckInMode: (state) => ({
+    setMode: (state, { payload: mode }) => ({
       ...state,
-      mode: 'check-in',
-    }),
-    setWorkoutMode: (state) => ({
-      ...state,
-      mode: 'workout',
-    }),
-    setCheckOutMode: (state) => ({
-      ...state,
-      mode: 'check-out',
+      mode,
     }),
   },
 });
 
-export const { setCheckInMode, setWorkoutMode, setCheckOutMode } = actions;
+export const { setMode } = actions;
 
 export default reducer;
