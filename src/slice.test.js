@@ -1,4 +1,3 @@
-import steps from './data/steps';
 import reducer, {
   setStep,
 } from './slice';
