@@ -13,7 +13,7 @@ describe('Footer', () => {
   const navigation = '/';
 
   it('renders next button', () => {
-    const { getByTestId } = render(
+    const { getByText } = render(
       <MemoryRouter>
         <Footer
           buttonText={buttonText}
@@ -22,7 +22,7 @@ describe('Footer', () => {
       </MemoryRouter>,
     );
 
-    const button = getByTestId('button-next');
+    const button = getByText('Test');
 
     expect(button).toHaveTextContent(buttonText);
   });

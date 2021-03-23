@@ -9,11 +9,13 @@ import HomePage from './HomePage';
 jest.mock('react-redux');
 
 describe('HomePage', () => {
-  it('renders home page without crash', () => {
-    render(
-      <MemoryRouter>
+  it('renders home page with greeting message', () => {
+    const { container } = render(
+      <MemoryRouter initialEntries={['/']}>
         <HomePage />
       </MemoryRouter>,
     );
+
+    expect(container).toHaveTextContent('Welcome to Reddit Bodyweight Recommended Routine');
   });
 });

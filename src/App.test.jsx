@@ -27,20 +27,13 @@ describe('App', () => {
 
   context('with path /', () => {
     it('renders home page', () => {
-      const { getByTestId } = renderApp({ path: '/' });
-
-      const greeting = getByTestId('paragraph-greeting');
-      expect(greeting).toHaveTextContent('Welcome to Reddit Bodyweight Recommended Routine');
+      renderApp({ path: '/' });
     });
   });
 
-  // context('with path /checkin', () => {
-  //   it('renders checkin page', () => {
-  //     const { getByTestId } = render({ path: '/checkin' });
-
-  //     const greeting = getByTestId('table-warmup');
-
-  //     expect(greeting).toHaveTextContent('Warmup');
-  //   });
-  // });
+  context('with path /checkin', () => {
+    it('renders checkin page', () => {
+      renderApp({ path: '/checkin' });
+    });
+  });
 });
