@@ -2,73 +2,45 @@ import React from 'react';
 
 import { render } from '@testing-library/react';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+
+import { MemoryRouter } from 'react-router-dom';
 
 import App from './App';
 
 jest.mock('react-redux');
 
 describe('App', () => {
-  const dispatch = jest.fn();
+  function renderApp({ path }) {
+    return render(
+      <MemoryRouter initialEntries={[path]}>
+        <App />
+      </MemoryRouter>,
+    );
+  }
 
-  useDispatch.mockImplementation(() => dispatch);
+  beforeEach(() => {
+    useSelector.mockImplementation((selector) => selector({
+      date: '',
+    }));
+  });
 
-  context('with initial mode', () => {
-    it('renders check-in mode', () => {
-      useSelector.mockImplementation((selector) => selector({
-        mode: 'check-in',
-      }));
+  context('with path /', () => {
+    it('renders home page', () => {
+      const { getByTestId } = renderApp({ path: '/' });
 
-      const { container } = render(<App />);
-
-      expect(container).toHaveTextContent('check-in');
+      const greeting = getByTestId('paragraph-greeting');
+      expect(greeting).toHaveTextContent('Welcome to Reddit Bodyweight Recommended Routine');
     });
   });
 
-  context('with unmatched mode', () => {
-    it('renders something went wrong', () => {
-      useSelector.mockImplementation((selector) => selector({
-        mode: 'nothing',
-      }));
+  // context('with path /checkin', () => {
+  //   it('renders checkin page', () => {
+  //     const { getByTestId } = render({ path: '/checkin' });
 
-      const { container } = render(<App />);
+  //     const greeting = getByTestId('table-warmup');
 
-      expect(container).toHaveTextContent('Something went wrong...');
-    });
-  });
-
-  context('with check-in mode clicked', () => {
-    it('renders check-in mode', () => {
-      useSelector.mockImplementation((selector) => selector({
-        mode: 'check-in',
-      }));
-
-      const { container } = render(<App />);
-
-      expect(container).toHaveTextContent('check-in');
-    });
-  });
-
-  context('with workout mode clicked', () => {
-    it('renders workout mode', () => {
-      useSelector.mockImplementation((selector) => selector({
-        mode: 'workout',
-      }));
-
-      const { container } = render(<App />);
-
-      expect(container).toHaveTextContent('workout');
-    });
-  });
-
-  context('with check-out mode clicked', () => {
-    it('renders check-out mode', () => {
-      useSelector.mockImplementation((selector) => selector({
-        mode: 'check-out',
-      }));
-      const { container } = render(<App />);
-
-      expect(container).toHaveTextContent('check-out');
-    });
-  });
+  //     expect(greeting).toHaveTextContent('Warmup');
+  //   });
+  // });
 });

@@ -1,23 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const time = new Date();
+const date = `${time.getFullYear()}-${time.getMonth() + 1}-${time.getDate()}`;
+
 const { actions, reducer } = createSlice({
   name: 'app',
   initialState: {
-    mode: 'check-in',
-    guidance: 'Initial Message',
+    date,
   },
   reducers: {
     setMode: (state, { payload: mode }) => ({
       ...state,
       mode,
     }),
-    setGuidance: (state, { payload: guidance }) => ({
-      ...state,
-      guidance,
-    }),
   },
 });
 
-export const { setMode, setGuidance } = actions;
+export const { setMode } = actions;
 
 export default reducer;
