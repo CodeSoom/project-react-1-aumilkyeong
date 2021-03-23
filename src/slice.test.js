@@ -1,15 +1,30 @@
+import steps from './data/steps';
 import reducer, {
-  setMode,
+  setStep,
 } from './slice';
 
 describe('slice', () => {
-  describe('setMode', () => {
-    it('changes mode', () => {
+  describe('setStep', () => {
+    it('changes step by path', () => {
       const state = reducer({
-        mode: 'initial',
-      }, setMode('test mode'));
+        step: {},
+        steps: [
+          {
+            path: '/',
+            prevPath: '',
+            nextPath: '',
+            buttonText: '',
+          },
+          {
+            path: '/foo',
+            prevPath: '',
+            nextPath: '',
+            buttonText: '',
+          },
+        ],
+      }, setStep('/foo'));
 
-      expect(state.mode).toBe('test mode');
+      expect(state.step.path).toBe('/foo');
     });
   });
 });

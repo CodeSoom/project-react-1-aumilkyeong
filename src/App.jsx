@@ -5,19 +5,25 @@ import {
   Route,
 } from 'react-router-dom';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { setStep } from './slice';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
 
 import HomePage from './pages/HomePage';
+import CheckinPage from './pages/CheckinPage';
 
 export default function App() {
+  const dispatch = useDispatch();
+
   const date = useSelector((state) => state.date);
+  const { buttonText, nextPath } = useSelector((state) => state.step);
 
-  const buttonText = 'Click to start';
-
-  const navigation = '/checkin';
+  function handleNext() {
+    dispatch(setStep(nextPath));
+  }
 
   return (
     <>
@@ -25,11 +31,13 @@ export default function App() {
         date={date}
       />
       <Switch>
-        <Route path="/" component={HomePage} />
+        <Route exact path="/" component={HomePage} />
+        <Route path="/checkin" component={CheckinPage} />
       </Switch>
       <Footer
         buttonText={buttonText}
-        navigation={navigation}
+        navigation={nextPath}
+        handleNext={handleNext}
       />
     </>
   );

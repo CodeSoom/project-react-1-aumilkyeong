@@ -13,11 +13,14 @@ describe('Footer', () => {
   const navigation = '/nextpage';
 
   it('renders the next button', () => {
+    const handleNext = jest.fn();
+
     const { getByText } = render(
       <MemoryRouter>
         <Footer
           buttonText={buttonText}
           navigation={navigation}
+          handleNext={handleNext}
         />
       </MemoryRouter>,
     );

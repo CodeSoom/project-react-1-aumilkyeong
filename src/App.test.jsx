@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render } from '@testing-library/react';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { MemoryRouter } from 'react-router-dom';
 
@@ -11,6 +11,8 @@ import App from './App';
 jest.mock('react-redux');
 
 describe('App', () => {
+  const dispatch = jest.fn();
+
   function renderApp({ path }) {
     return render(
       <MemoryRouter initialEntries={[path]}>
@@ -20,8 +22,18 @@ describe('App', () => {
   }
 
   beforeEach(() => {
+    dispatch.mockClear();
+
+    useDispatch.mockImplementation(() => dispatch);
+
     useSelector.mockImplementation((selector) => selector({
       date: '',
+      step: {
+        path: '',
+        prevPath: '',
+        nextPath: '',
+        buttonText: '',
+      },
     }));
   });
 

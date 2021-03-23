@@ -7,17 +7,17 @@ describe('HomePage', () => {
     const time = new Date();
     const dateString = `${time.getFullYear()}-${time.getMonth() + 1}-${time.getDate()}`;
 
-    cy.get('[data-testid="header-date"]')
+    cy.get('#header-date')
       .should('have.text', dateString)
-      .get('[data-testid="paragraph-greeting"]')
+      .get('#greeting')
       .should('have.text', 'Welcome to Reddit Bodyweight Recommended Routine')
-      .get('[data-testid="button-next"]')
+      .get('#button-next')
       .should('have.text', 'Click to start');
   });
 
   it('navigates checkin page', () => {
     // 체크인 화면이 잘 나오는지 정의
-    cy.get('[data-testid="button-next"]')
+    cy.get('#button-next')
       .click()
       .url()
       .should('include', '/checkin');
