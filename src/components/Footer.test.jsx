@@ -10,9 +10,9 @@ jest.mock('react-redux');
 
 describe('Footer', () => {
   const buttonText = 'Test';
-  const navigation = '/';
+  const navigation = '/nextpage';
 
-  it('renders next button', () => {
+  it('renders the next button', () => {
     const { getByText } = render(
       <MemoryRouter>
         <Footer
