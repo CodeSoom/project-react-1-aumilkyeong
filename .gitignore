@@ -3,3 +3,10 @@ node_modules
 
 ## Jest
 coverage
+
+## Cypress
+cypress/fixtures
+cypress/plugins
+cypress/support
+cypress/videos 
+cypress/screenshots
