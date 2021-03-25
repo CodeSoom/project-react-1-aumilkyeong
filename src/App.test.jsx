@@ -5,9 +5,7 @@ import { render } from '@testing-library/react';
 import App from './App';
 
 describe('App', () => {
-  it('renders simple message', () => {
-    const { container } = render(<App />);
-
-    expect(container).toHaveTextContent('Hello, React');
+  it('renders app without crash', () => {
+    render(<App />);
   });
 });
