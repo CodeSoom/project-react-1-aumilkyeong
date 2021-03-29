@@ -1,6 +1,6 @@
 describe('SettingPage', () => {
   beforeEach(() => {
-    cy.visit('/');
+    cy.visit('/setting');
   });
 
   it('contains setting page outline', () => {
