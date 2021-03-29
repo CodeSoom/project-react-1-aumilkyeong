@@ -23,5 +23,6 @@ module.exports = {
     context: 'readonly',
   },
   rules: {
+    'react/prop-types': 'off',
   },
 };
