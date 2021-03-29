@@ -4,7 +4,11 @@ import { render } from '@testing-library/react';
 
 import { MemoryRouter } from 'react-router-dom';
 
+import { useSelector } from 'react-redux';
+
 import App from './App';
+
+jest.mock('react-redux');
 
 describe('App', () => {
   function renderApp({ path }) {
@@ -14,6 +18,23 @@ describe('App', () => {
       </MemoryRouter>
     ));
   }
+
+  beforeEach(() => {
+    useSelector.mockImplementation((selector) => selector({
+      setting: {
+        warmup: {
+          yuri: false,
+          squatSkyReach: false,
+          gmbWristPrep: false,
+          deadbug: false,
+          archHang: false,
+          supportHold: false,
+          easierSquat: false,
+          easierHinge: false,
+        },
+      },
+    }));
+  });
 
   context('with path /', () => {
     it('renders HomePage', () => {
