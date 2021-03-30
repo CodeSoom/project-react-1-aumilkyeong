@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { toggleWarmup } from '../slice';
+import { setWarmup } from '../slice';
 
 import WarmupForm from './WarmupForm';
 
@@ -14,7 +14,7 @@ export default function WarmupFormContainer() {
   function handleChange(event) {
     const exercise = event.target.name;
 
-    dispatch(toggleWarmup({ exercise }));
+    dispatch(setWarmup({ exercise }));
   }
 
   return (

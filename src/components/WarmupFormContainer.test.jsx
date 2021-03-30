@@ -33,36 +33,13 @@ describe('WarmupFormContainer', () => {
     render(<WarmupFormContainer />);
   });
 
-  describe('warmup setting', () => {
-    it('renders warmup options', () => {
-      const { container, getByTestId } = render(
-        <WarmupFormContainer />,
-      );
+  it('dispatches the selected warmup', () => {
+    const { getByLabelText } = render(
+      <WarmupFormContainer />,
+    );
 
-      expect(container).toHaveTextContent('준비운동');
-
-      const form = getByTestId('form-warmup');
-
-      expect(form).toHaveFormValues({
-        yuri: false,
-        squatSkyReach: false,
-        gmbWristPrep: false,
-        deadbug: false,
-        archHang: false,
-        supportHold: false,
-        easierSquat: false,
-        easierHinge: false,
-      });
-    });
-
-    it('can select warmup exercises', () => {
-      const { getByLabelText } = render(
-        <WarmupFormContainer />,
-      );
-
-      const yuri = getByLabelText('Yuri\'s Shoulder Band Warmup');
-      fireEvent.click(yuri);
-      expect(dispatch).toBeCalledTimes(1);
-    });
+    const yuri = getByLabelText('Yuri\'s Shoulder Band Warmup');
+    fireEvent.click(yuri);
+    expect(dispatch).toBeCalledTimes(1);
   });
 });

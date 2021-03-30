@@ -28,7 +28,7 @@ const { actions, reducer } = createSlice({
     progressions,
   },
   reducers: {
-    toggleWarmup(state, { payload: { exercise } }) {
+    setWarmup(state, { payload: { exercise } }) {
       return {
         ...state,
         setting: {
@@ -40,7 +40,7 @@ const { actions, reducer } = createSlice({
         },
       };
     },
-    setSelectedStrengthwork(state, { payload: { category, exercise } }) {
+    setStrengthwork(state, { payload: { category, exercise } }) {
       return {
         ...state,
         setting: {
@@ -56,8 +56,8 @@ const { actions, reducer } = createSlice({
 });
 
 export const {
-  toggleWarmup,
-  setSelectedStrengthwork,
+  setWarmup,
+  setStrengthwork,
 } = actions;
 
 export default reducer;

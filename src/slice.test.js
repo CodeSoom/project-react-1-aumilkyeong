@@ -1,9 +1,9 @@
 import reducer, {
-  toggleWarmup,
-  setSelectedStrengthwork,
+  setWarmup,
+  setStrengthwork,
 } from './slice';
 
-test('toggleWarmup', () => {
+test('setWarmup', () => {
   const initialState = {
     setting: {
       warmup: {
@@ -13,13 +13,13 @@ test('toggleWarmup', () => {
     },
   };
 
-  const state = reducer(initialState, toggleWarmup({ exercise: 'foo' }));
+  const state = reducer(initialState, setWarmup({ exercise: 'foo' }));
 
   expect(state.setting.warmup.foo).toBe(true);
   expect(state.setting.warmup.bar).toBe(false);
 });
 
-test('setSelectedStrengthwork', () => {
+test('setStrengthwork', () => {
   const initialState = {
     setting: {
       strengthwork: {
@@ -29,7 +29,7 @@ test('setSelectedStrengthwork', () => {
     },
   };
 
-  const state = reducer(initialState, setSelectedStrengthwork({
+  const state = reducer(initialState, setStrengthwork({
     category: 'foo',
     exercise: 'some exercise',
   }));
