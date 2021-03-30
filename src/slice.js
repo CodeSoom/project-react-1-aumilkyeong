@@ -14,6 +14,59 @@ const { actions, reducer } = createSlice({
         easierSquat: false,
         easierHinge: false,
       },
+      strengthwork: {
+        selected: {
+          pullup: 'pullup',
+          squat: 'squat',
+          dip: 'dip',
+          hinge: 'singleLeggedDeadlift',
+          row: 'horizontalRow',
+          pushup: 'pushup',
+        },
+        progressions: {
+          pullup: [
+            'scapularPull',
+            'archHang',
+            'negativePullup',
+            'pullup',
+            'weightedPullup',
+          ],
+          squat: [
+            'assistedSquat',
+            'squat',
+            'splitSquat',
+            'bulgarianSplitSquat',
+            'shrimpSquat',
+          ],
+          dip: [
+            'supportHold',
+            'negativeDip',
+            'dip',
+            'weightedDip',
+          ],
+          hinge: [
+            'romanianDeadlift',
+            'singleLeggedDeadlift',
+            'negativeBandedNordicCurl',
+            'bandedNordicCurl',
+            'nordicCurl',
+          ],
+          row: [
+            'verticalRow',
+            'inclineRow',
+            'horizontalRow',
+            'wideRow',
+            'weightedInvertedRow',
+          ],
+          pushup: [
+            'verticalPushup',
+            'inclinePushup',
+            'pushup',
+            'diamondPushup',
+            'pseudoPlanchePushup',
+          ],
+        },
+      },
     },
   },
   reducers: {
@@ -29,11 +82,27 @@ const { actions, reducer } = createSlice({
         },
       };
     },
+    setSelectedStrengthwork(state, { payload: { progression, exercise } }) {
+      return {
+        ...state,
+        setting: {
+          ...state.setting,
+          strengthwork: {
+            ...state.setting.strengthwork,
+            selected: {
+              ...state.setting.strengthwork.selected,
+              [progression]: exercise,
+            },
+          },
+        },
+      };
+    },
   },
 });
 
 export const {
   toggleWarmup,
+  setSelectedStrengthwork,
 } = actions;
 
 export default reducer;
