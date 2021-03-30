@@ -32,6 +32,28 @@ describe('App', () => {
           easierSquat: false,
           easierHinge: false,
         },
+        strengthwork: {
+          pullup: '',
+          squat: '',
+          dip: '',
+          hinge: '',
+          row: '',
+          pushup: '',
+          antiExtension: '',
+          antiRotation: '',
+          extension: '',
+        },
+      },
+      progressions: {
+        pullup: [],
+        squat: [],
+        dip: [],
+        hinge: [],
+        row: [],
+        pushup: [],
+        antiExtension: [],
+        antiRotation: [],
+        extension: [],
       },
     }));
   });
