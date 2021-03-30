@@ -9,7 +9,7 @@ Recommended Routine Tracker.
 ## 사이트 구조
 
 1. / : 홈페이지. Recommended Routine을 소개한다.
-2. /settings: 설정 페이지. 오늘 수행할 준비 운동과 근력 운동을 선택한다.
+2. /setting: 설정 페이지. 오늘 수행할 준비 운동과 근력 운동을 선택한다.
 3. /workout: 운동 수행 페이지. 오늘 운동 내역을 기록한다.
 4. /records: 수행했던 운동 기록을 볼 수 있다.
 
