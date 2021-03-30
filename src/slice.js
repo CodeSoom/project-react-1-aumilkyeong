@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import progressions from './data/progressions';
+
 const { actions, reducer } = createSlice({
   name: 'app',
   initialState: {
@@ -15,59 +17,15 @@ const { actions, reducer } = createSlice({
         easierHinge: false,
       },
       strengthwork: {
-        selected: {
-          pullup: 'pullup',
-          squat: 'squat',
-          dip: 'dip',
-          hinge: 'singleLeggedDeadlift',
-          row: 'horizontalRow',
-          pushup: 'pushup',
-        },
-        progressions: {
-          pullup: [
-            'scapularPull',
-            'archHang',
-            'negativePullup',
-            'pullup',
-            'weightedPullup',
-          ],
-          squat: [
-            'assistedSquat',
-            'squat',
-            'splitSquat',
-            'bulgarianSplitSquat',
-            'shrimpSquat',
-          ],
-          dip: [
-            'supportHold',
-            'negativeDip',
-            'dip',
-            'weightedDip',
-          ],
-          hinge: [
-            'romanianDeadlift',
-            'singleLeggedDeadlift',
-            'negativeBandedNordicCurl',
-            'bandedNordicCurl',
-            'nordicCurl',
-          ],
-          row: [
-            'verticalRow',
-            'inclineRow',
-            'horizontalRow',
-            'wideRow',
-            'weightedInvertedRow',
-          ],
-          pushup: [
-            'verticalPushup',
-            'inclinePushup',
-            'pushup',
-            'diamondPushup',
-            'pseudoPlanchePushup',
-          ],
-        },
+        pullup: 'pullup',
+        squat: 'squat',
+        dip: 'dip',
+        hinge: 'singleLeggedDeadlift',
+        row: 'horizontalRow',
+        pushup: 'pushup',
       },
     },
+    progressions,
   },
   reducers: {
     toggleWarmup(state, { payload: { exercise } }) {
@@ -82,17 +40,14 @@ const { actions, reducer } = createSlice({
         },
       };
     },
-    setSelectedStrengthwork(state, { payload: { progression, exercise } }) {
+    setSelectedStrengthwork(state, { payload: { category, exercise } }) {
       return {
         ...state,
         setting: {
           ...state.setting,
           strengthwork: {
             ...state.setting.strengthwork,
-            selected: {
-              ...state.setting.strengthwork.selected,
-              [progression]: exercise,
-            },
+            [category]: exercise,
           },
         },
       };

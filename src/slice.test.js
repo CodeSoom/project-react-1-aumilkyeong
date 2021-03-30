@@ -23,19 +23,17 @@ test('setSelectedStrengthwork', () => {
   const initialState = {
     setting: {
       strengthwork: {
-        selected: {
-          foo: 'foo',
-          bar: 'bar',
-        },
+        foo: 'foo',
+        bar: 'bar',
       },
     },
   };
 
   const state = reducer(initialState, setSelectedStrengthwork({
-    progression: 'foo',
+    category: 'foo',
     exercise: 'some exercise',
   }));
 
-  expect(state.setting.strengthwork.selected.foo).toBe('some exercise');
-  expect(state.setting.strengthwork.selected.bar).toBe('bar');
+  expect(state.setting.strengthwork.foo).toBe('some exercise');
+  expect(state.setting.strengthwork.bar).toBe('bar');
 });
