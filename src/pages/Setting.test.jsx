@@ -33,6 +33,7 @@ describe('SettingPage', () => {
         extension: '',
       },
     },
+    warmups: [],
     progressions: {
       pullup: [],
       squat: [],

@@ -10,6 +10,9 @@ export default function WarmupFormContainer() {
   const dispatch = useDispatch();
 
   const config = useSelector((state) => state.setting.warmup);
+  const warmups = useSelector((state) => state.warmups);
+
+  const labels = Object.fromEntries(warmups.map((exercise) => ([exercise.name, exercise.label])));
 
   function handleChange(event) {
     const exercise = event.target.name;
@@ -20,6 +23,7 @@ export default function WarmupFormContainer() {
   return (
     <WarmupForm
       config={config}
+      labels={labels}
       onChange={handleChange}
     />
   );

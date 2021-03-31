@@ -26,6 +26,7 @@ describe('WarmupFormContainer', () => {
           easierHinge: false,
         },
       },
+      warmups: [],
     }));
   });
 
@@ -34,11 +35,12 @@ describe('WarmupFormContainer', () => {
   });
 
   it('dispatches the selected warmup', () => {
-    const { getByLabelText } = render(
+    const { container } = render(
       <WarmupFormContainer />,
     );
 
-    const yuri = getByLabelText('Yuri\'s Shoulder Band Warmup');
+    const yuri = container.querySelector('#yuri');
+
     fireEvent.click(yuri);
     expect(dispatch).toBeCalledTimes(1);
   });

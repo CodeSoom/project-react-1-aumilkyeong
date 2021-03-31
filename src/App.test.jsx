@@ -44,6 +44,7 @@ describe('App', () => {
           extension: '',
         },
       },
+      warmups: [],
       progressions: {
         pullup: [],
         squat: [],
