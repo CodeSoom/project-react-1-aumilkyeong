@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import progressions from './data/progressions';
+import warmups from './data/warmups';
 
 const { actions, reducer } = createSlice({
   name: 'app',
@@ -28,6 +29,7 @@ const { actions, reducer } = createSlice({
         extension: 'reverseHyperextension',
       },
     },
+    warmups,
     progressions,
   },
   reducers: {
