@@ -31,24 +31,32 @@ const supportHold = {
   label: 'Support Hold',
 };
 
-const easierSquat = (name) => {
-  const current = squatProgression
-    .find((exercise) => exercise.name === name);
+const easierSquat = {
+  name: 'easierSquat',
+  label: 'Easier Squat',
+  getEasierSquat: (name) => {
+    const current = squatProgression
+      .find((exercise) => exercise.name === name);
 
-  const easier = squatProgression
-    .find((exercise) => exercise.level === current.level - 1 || exercise);
+    const easier = squatProgression
+      .find((exercise) => (exercise.level === current.level - 1)) || squatProgression[0];
 
-  return easier;
+    return easier;
+  },
 };
 
-const easierHinge = (name) => {
-  const current = hingeProgression
-    .find((exercise) => exercise.name === name);
+const easierHinge = {
+  name: 'easierHinge',
+  label: 'Easier Hinge',
+  getEasierHinge: (name) => {
+    const current = hingeProgression
+      .find((exercise) => exercise.name === name);
 
-  const easier = hingeProgression
-    .find((exercise) => exercise.level === current.level - 1 || exercise);
+    const easier = hingeProgression
+      .find((exercise) => exercise.level === current.level - 1) || hingeProgression[0];
 
-  return easier;
+    return easier;
+  },
 };
 
 const warmups = [
