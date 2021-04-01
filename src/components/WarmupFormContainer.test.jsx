@@ -26,7 +26,12 @@ describe('WarmupFormContainer', () => {
           easierHinge: false,
         },
       },
-      warmups: [],
+      warmups: [
+        {
+          name: '',
+          label: '',
+        },
+      ],
     }));
   });
 
