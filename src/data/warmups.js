@@ -14,7 +14,7 @@ const squatSkyReach = {
   label: 'Squat Sky Reach',
   range: '5-10',
   demos: ['https://www.youtube.com/watch?v=lbozu0DPcYI&t=42s'],
-  tips: [''],
+  tips: [],
 };
 
 const gmbWristPrep = {
@@ -35,7 +35,7 @@ const deadbug = {
     'https://www.nick-e.com/wp-content/uploads/2021/01/photo6033108082604749544.jpg',
     'https://www.nick-e.com/wp-content/uploads/2021/01/photo6033108082604749543-1200x1200.jpg',
   ],
-  tips: [''],
+  tips: [],
 };
 
 const archHang = {
@@ -43,7 +43,7 @@ const archHang = {
   label: 'Arch Hang',
   range: '10',
   demos: ['https://www.youtube.com/watch?v=C995b3KLXS4&t=7s'],
-  tips: [''],
+  tips: [],
 };
 
 const supportHold = {
