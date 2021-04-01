@@ -17,6 +17,16 @@ describe('WarmupForm', () => {
     easierSquat: false,
     easierHinge: false,
   };
+  const labels = {
+    yuri: 'Yuri\'s Shoulder Band Warmup',
+    squatSkyReach: '',
+    gmbWristPrep: '',
+    deadbug: '',
+    archHang: '',
+    supportHold: '',
+    easierSquat: '',
+    easierHinge: '',
+  };
 
   const handleChange = jest.fn();
 
@@ -24,6 +34,7 @@ describe('WarmupForm', () => {
     const { container, getByTestId } = render(
       <WarmupForm
         config={config}
+        labels={labels}
         onChange={handleChange}
       />,
     );
@@ -48,6 +59,7 @@ describe('WarmupForm', () => {
     const { getByLabelText } = render(
       <WarmupForm
         config={config}
+        labels={labels}
         onChange={handleChange}
       />,
     );
