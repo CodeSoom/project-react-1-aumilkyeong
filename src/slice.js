@@ -31,6 +31,17 @@ const { actions, reducer } = createSlice({
     },
     record: {
       warmup: {},
+      strengthwork: {
+        pullup: {},
+        squat: {},
+        dip: {},
+        hinge: {},
+        row: {},
+        pushup: {},
+        antiExtension: {},
+        antiRotation: {},
+        extension: {},
+      },
     },
     warmups,
     progressions,
@@ -72,6 +83,21 @@ const { actions, reducer } = createSlice({
         },
       };
     },
+    setStrengthworkRecord(state, { payload: { category, reps } }) {
+      return {
+        ...state,
+        record: {
+          ...state.record,
+          strengthwork: {
+            ...state.record.strengthwork,
+            [category]: {
+              ...state.record.strengthwork[category],
+              reps,
+            },
+          },
+        },
+      };
+    },
   },
 });
 
@@ -79,6 +105,7 @@ export const {
   setWarmup,
   setStrengthwork,
   setWarmupRecord,
+  setStrengthworkRecord,
 } = actions;
 
 export default reducer;

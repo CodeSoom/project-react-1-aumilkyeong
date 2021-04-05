@@ -2,6 +2,7 @@ import reducer, {
   setWarmup,
   setStrengthwork,
   setWarmupRecord,
+  setStrengthworkRecord,
 } from './slice';
 
 test('setWarmup', () => {
@@ -55,4 +56,31 @@ test('setWarmupRecord', () => {
 
   expect(state.record.warmup.foo).toBe(99);
   expect(state.record.warmup.bar).toBe(0);
+});
+
+test('setStrengthworkRecord', () => {
+  const initialState = {
+    record: {
+      strengthwork: {
+        pullup: {
+          level: 0,
+          exercise: 'foo',
+          reps: [],
+        },
+        squat: {
+          level: 0,
+          exercise: 'bar',
+          reps: [],
+        },
+      },
+    },
+  };
+
+  const state = reducer(initialState, setStrengthworkRecord({
+    category: 'pullup',
+    reps: [8, 8, 8],
+  }));
+
+  expect(state.record.strengthwork.pullup.reps).toStrictEqual([8, 8, 8]);
+  expect(state.record.strengthwork.squat).toStrictEqual(initialState.record.strengthwork.squat);
 });
