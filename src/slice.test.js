@@ -1,6 +1,7 @@
 import reducer, {
   setWarmup,
   setStrengthwork,
+  setWarmupRecord,
 } from './slice';
 
 test('setWarmup', () => {
@@ -36,4 +37,22 @@ test('setStrengthwork', () => {
 
   expect(state.setting.strengthwork.foo).toBe('some exercise');
   expect(state.setting.strengthwork.bar).toBe('bar');
+});
+
+test('setWarmupRecord', () => {
+  const initialState = {
+    record: {
+      warmup: {
+        bar: 0,
+      },
+    },
+  };
+
+  const state = reducer(initialState, setWarmupRecord({
+    exercise: 'foo',
+    reps: 99,
+  }));
+
+  expect(state.record.warmup.foo).toBe(99);
+  expect(state.record.warmup.bar).toBe(0);
 });

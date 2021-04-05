@@ -23,7 +23,7 @@ describe('App', () => {
     useSelector.mockImplementation((selector) => selector({
       setting: {
         warmup: {
-          yuri: false,
+          yuri: true,
           squatSkyReach: false,
           gmbWristPrep: false,
           deadbug: false,
@@ -44,7 +44,12 @@ describe('App', () => {
           extension: '',
         },
       },
-      warmups: [],
+      warmups: [
+        {
+          name: 'yuri',
+          label: '',
+        },
+      ],
       progressions: {
         pullup: [],
         squat: [],
@@ -55,6 +60,9 @@ describe('App', () => {
         antiExtension: [],
         antiRotation: [],
         extension: [],
+      },
+      record: {
+        warmup: {},
       },
     }));
   });
@@ -73,6 +81,17 @@ describe('App', () => {
     it('renders SettingPage', () => {
       const { container } = renderApp({ path: '/setting' });
 
+      expect(container).toHaveTextContent(/Setting/);
+      expect(container).toHaveTextContent(/준비운동/);
+      expect(container).toHaveTextContent(/근력운동/);
+    });
+  });
+
+  context('with path /workout', () => {
+    it('renders WorkoutPage', () => {
+      const { container } = renderApp({ path: '/workout' });
+
+      expect(container).toHaveTextContent(/Workout/);
       expect(container).toHaveTextContent(/준비운동/);
       expect(container).toHaveTextContent(/근력운동/);
     });

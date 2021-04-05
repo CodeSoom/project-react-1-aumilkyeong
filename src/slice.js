@@ -29,6 +29,9 @@ const { actions, reducer } = createSlice({
         extension: 'reverseHyperextension',
       },
     },
+    record: {
+      warmup: {},
+    },
     warmups,
     progressions,
   },
@@ -57,12 +60,25 @@ const { actions, reducer } = createSlice({
         },
       };
     },
+    setWarmupRecord(state, { payload: { exercise, reps } }) {
+      return {
+        ...state,
+        record: {
+          ...state.record,
+          warmup: {
+            ...state.record.warmup,
+            [exercise]: reps,
+          },
+        },
+      };
+    },
   },
 });
 
 export const {
   setWarmup,
   setStrengthwork,
+  setWarmupRecord,
 } = actions;
 
 export default reducer;
