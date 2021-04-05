@@ -6,7 +6,7 @@ import StrengthworkFormContainer from '../components/StrengthworkFormContainer';
 export default function SettingPage() {
   return (
     <main>
-      <h1>운동 설정하기</h1>
+      <h1>Setting</h1>
       <WarmupFormContainer />
       <StrengthworkFormContainer />
     </main>
