@@ -5,7 +5,7 @@ describe('SettingPage', () => {
 
   it('contains setting page outline', () => {
     cy.get('h1')
-      .should('have.text', '운동 설정하기')
+      .should('have.text', 'Setting')
       .get('#setting-warmup')
       .contains('h2', '준비운동')
       .get('#setting-strengthwork')
