@@ -12,30 +12,84 @@ describe('WorkoutPage', () => {
 
   describe('warmup', () => {
     it('can input exercise reps', () => {
-      cy.get('input[type="number"]')
+      cy.get('#fieldset-warmup')
+        .find('input[type="number"]')
         .each((element) => {
           cy.wrap(element).type('10');
         });
     });
 
-    it('activates or deactivates input field by clicking done button', () => {
-      cy.get('button[id^=toggle-]')
+    it('activates or deactivates a input field by clicking the button', () => {
+      cy.get('#fieldset-warmup')
+        .find('button[id^=toggle-]')
         .each((element) => {
           cy.wrap(element)
             .click();
         })
-        .get('input[type="number"]')
+        .get('#fieldset-warmup')
+        .find('input[type="number"]')
         .each((element) => {
           cy.wrap(element)
             .should('be.disabled');
         });
 
-      cy.get('button[id^=toggle-]')
+      cy.get('#fieldset-warmup')
+        .find('button[id^=toggle-]')
         .each((element) => {
           cy.wrap(element)
             .click();
         })
-        .get('input[type="number"]')
+        .get('#fieldset-warmup')
+        .find('input[type="number"]')
+        .each((element) => {
+          cy.wrap(element)
+            .should('not.be.disabled');
+        });
+    });
+  });
+
+  describe('strengthwork', () => {
+    it('displays category, exercise, level, range, and reps for 3 of the sets', () => {
+      cy.get('strengthwork header')
+        .should('have.text', '계열')
+        .and('have.text', '운동')
+        .and('have.text', '난이도')
+        .and('have.text', '범위')
+        .and('have.text', '1세트')
+        .and('have.text', '2세트')
+        .and('have.text', '3세트');
+    });
+
+    it('can input exercise reps', () => {
+      cy.get('#fieldset-strengthwork')
+        .find('exercise rep inputs')
+        .each((element) => {
+          cy.wrap(element)
+            .type(10);
+        });
+    });
+    it('activates or deactivates a input field by clicking the button', () => {
+      cy.get('#fieldset-strengthwork')
+        .find('all the buttons')
+        .each((element) => {
+          cy.wrap(element)
+            .click();
+        })
+        .get('#fieldset-strengthwork')
+        .find('all the inputs')
+        .each((element) => {
+          cy.wrap(element)
+            .should('be.disabled');
+        });
+
+      cy.get('#fieldset-strengthwork')
+        .find('all the buttons')
+        .each((element) => {
+          cy.wrap(element)
+            .click();
+        })
+        .get('#fieldset-strengthwork')
+        .find('all the inputs')
         .each((element) => {
           cy.wrap(element)
             .should('not.be.disabled');
