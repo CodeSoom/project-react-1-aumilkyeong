@@ -32,15 +32,51 @@ const { actions, reducer } = createSlice({
     record: {
       warmup: {},
       strengthwork: {
-        pullup: {},
-        squat: {},
-        dip: {},
-        hinge: {},
-        row: {},
-        pushup: {},
-        antiExtension: {},
-        antiRotation: {},
-        extension: {},
+        pullup: {
+          set1: '',
+          set2: '',
+          set3: '',
+        },
+        squat: {
+          set1: '',
+          set2: '',
+          set3: '',
+        },
+        dip: {
+          set1: '',
+          set2: '',
+          set3: '',
+        },
+        hinge: {
+          set1: '',
+          set2: '',
+          set3: '',
+        },
+        row: {
+          set1: '',
+          set2: '',
+          set3: '',
+        },
+        pushup: {
+          set1: '',
+          set2: '',
+          set3: '',
+        },
+        antiExtension: {
+          set1: '',
+          set2: '',
+          set3: '',
+        },
+        antiRotation: {
+          set1: '',
+          set2: '',
+          set3: '',
+        },
+        extension: {
+          set1: '',
+          set2: '',
+          set3: '',
+        },
       },
     },
     warmups,

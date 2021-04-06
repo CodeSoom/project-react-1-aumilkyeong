@@ -11,13 +11,26 @@ export default function StrengthworkInputGroupContainer() {
   const dispatch = useDispatch();
 
   const setting = useSelector((state) => state.setting.strengthwork);
+  const record = useSelector((state) => state.record.strengthwork);
 
   const workout = Object.fromEntries(
     Object.entries(setting)
-      .map(([category, exercise]) => [
-        category,
-        progressions[category].find((item) => (item.name === exercise)),
-      ]),
+      .map(([category, exercise]) => {
+        const target = progressions[category].find((item) => (item.name === exercise));
+        const targetWithRecord = {
+          ...target,
+          record: {
+            set1: record[category].set1,
+            set2: record[category].set2,
+            set3: record[category].set3,
+          },
+        };
+
+        return [
+          category,
+          targetWithRecord,
+        ];
+      }),
   );
 
   function toggleInputActivation({ id }) {

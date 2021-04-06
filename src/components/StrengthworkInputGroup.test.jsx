@@ -12,6 +12,11 @@ describe('StrengthworkInputGroup', () => {
       name: 'pullup',
       label: 'pullup',
       range: '5-8',
+      record: {
+        set1: '',
+        set2: '',
+        set3: '',
+      },
     },
     squat: {
       category: 'squat',
@@ -19,6 +24,11 @@ describe('StrengthworkInputGroup', () => {
       name: 'squat',
       label: 'squat',
       range: '5-8',
+      record: {
+        set1: '',
+        set2: '',
+        set3: '',
+      },
     },
     dip: {
       category: 'dip',
@@ -26,6 +36,11 @@ describe('StrengthworkInputGroup', () => {
       name: 'dip',
       label: 'dip',
       range: '5-8',
+      record: {
+        set1: '',
+        set2: '',
+        set3: '',
+      },
     },
     hinge: {
       category: 'hinge',
@@ -33,6 +48,11 @@ describe('StrengthworkInputGroup', () => {
       name: 'hinge',
       label: 'hinge',
       range: '5-8',
+      record: {
+        set1: '',
+        set2: '',
+        set3: '',
+      },
     },
     row: {
       category: 'row',
@@ -40,6 +60,11 @@ describe('StrengthworkInputGroup', () => {
       name: 'row',
       label: 'row',
       range: '5-8',
+      record: {
+        set1: '',
+        set2: '',
+        set3: '',
+      },
     },
     pushup: {
       category: 'pushup',
@@ -47,6 +72,11 @@ describe('StrengthworkInputGroup', () => {
       name: 'pushup',
       label: 'pushup',
       range: '5-8',
+      record: {
+        set1: '',
+        set2: '',
+        set3: '',
+      },
     },
     antiExtension: {
       category: 'anti-extension',
@@ -54,6 +84,11 @@ describe('StrengthworkInputGroup', () => {
       name: 'anti-extension',
       label: 'Anti-Extension',
       range: '5-8',
+      record: {
+        set1: '',
+        set2: '',
+        set3: '',
+      },
     },
     antiRotation: {
       category: 'anti-rotation',
@@ -61,6 +96,11 @@ describe('StrengthworkInputGroup', () => {
       name: 'anti-rotation',
       label: 'Anti-Rotation',
       range: '5-8',
+      record: {
+        set1: '',
+        set2: '',
+        set3: '',
+      },
     },
     extension: {
       category: 'extension',
@@ -68,6 +108,11 @@ describe('StrengthworkInputGroup', () => {
       name: 'extension',
       label: 'Extension',
       range: '5-8',
+      record: {
+        set1: '',
+        set2: '',
+        set3: '',
+      },
     },
   };
 

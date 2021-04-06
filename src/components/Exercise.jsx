@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Exercise({ exercise, onChange, onClick }) {
   const {
-    category, name, label, level, range,
+    category, name, label, level, range, record,
   } = exercise;
 
   return (
@@ -20,6 +20,7 @@ export default function Exercise({ exercise, onChange, onClick }) {
             type="number"
             id={`${name}-set-${set}`}
             name={`${name}-set-${set}`}
+            value={record[`set${set}`]}
             onChange={(event) => onChange({ category, name, set }, event)}
           />
           <button

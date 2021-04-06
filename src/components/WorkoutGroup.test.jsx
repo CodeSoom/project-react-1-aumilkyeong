@@ -9,10 +9,20 @@ describe('WorkoutGroup', () => {
     {
       category: 'foo',
       name: 'foo',
+      record: {
+        set1: '',
+        set2: '',
+        set3: '',
+      },
     },
     {
       category: 'bar',
       name: 'bar',
+      record: {
+        set1: '',
+        set2: '',
+        set3: '',
+      },
     },
   ];
 

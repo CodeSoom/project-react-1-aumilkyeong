@@ -11,6 +11,11 @@ describe('Exercise', () => {
     name: 'foo',
     label: 'foo',
     range: '0-999',
+    record: {
+      set1: undefined,
+      set2: undefined,
+      set3: undefined,
+    },
   };
 
   it('renders exercise information with inputs', () => {
@@ -27,6 +32,7 @@ describe('Exercise', () => {
 
   it('inputs reps of the exercise', () => {
     const handleChange = jest.fn();
+
     const { container } = render(
       <Exercise
         exercise={exercise}
@@ -37,6 +43,7 @@ describe('Exercise', () => {
     const input = container.querySelector('#foo-set-1');
 
     fireEvent.change(input, { target: { value: 99 } });
+
     expect(input.valueAsNumber).toBe(99);
   });
 });
