@@ -1,4 +1,5 @@
 const romanianDeadlift = {
+  category: 'hinge',
   level: 1,
   name: 'romanianDeadlift',
   label: 'Romanian Deadlift',
@@ -13,6 +14,7 @@ const romanianDeadlift = {
 };
 
 const singleLeggedDeadlift = {
+  category: 'hinge',
   level: 2,
   name: 'singleLeggedDeadlift',
   label: 'Single Legged Deadlift',
@@ -25,6 +27,7 @@ const singleLeggedDeadlift = {
 };
 
 const negativeBandedNordicCurl = {
+  category: 'hinge',
   level: 3,
   name: 'negativeBandedNordicCurl',
   label: 'Negative Banded Nordic Curl',
@@ -38,6 +41,7 @@ const negativeBandedNordicCurl = {
 };
 
 const bandedNordicCurl = {
+  category: 'hinge',
   level: 4,
   name: 'bandedNordicCurl',
   label: 'Banded Nordic Curl',
@@ -51,6 +55,7 @@ const bandedNordicCurl = {
 };
 
 const nordicCurl = {
+  category: 'hinge',
   level: 5,
   name: 'nordicCurl',
   label: 'Nordic Curl',

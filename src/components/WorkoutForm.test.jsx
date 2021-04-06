@@ -13,7 +13,17 @@ describe('WorkoutForm', () => {
     useSelector.mockImplementation((selector) => selector({
       setting: {
         warmup: {},
-        strengthwork: {},
+        strengthwork: {
+          pullup: 'pullup',
+          squat: 'squat',
+          dip: 'dip',
+          hinge: 'singleLeggedDeadlift',
+          row: 'horizontalRow',
+          pushup: 'pushup',
+          antiExtension: 'plank',
+          antiRotation: 'bandedPallofPress',
+          extension: 'reverseHyperextension',
+        },
       },
       warmups: [],
       record: {

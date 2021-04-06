@@ -83,7 +83,11 @@ const { actions, reducer } = createSlice({
         },
       };
     },
-    setStrengthworkRecord(state, { payload: { category, reps } }) {
+    setStrengthworkRecord(state, {
+      payload: {
+        category, name, set, reps,
+      },
+    }) {
       return {
         ...state,
         record: {
@@ -92,7 +96,8 @@ const { actions, reducer } = createSlice({
             ...state.record.strengthwork,
             [category]: {
               ...state.record.strengthwork[category],
-              reps,
+              name,
+              [`set${set}`]: reps,
             },
           },
         },

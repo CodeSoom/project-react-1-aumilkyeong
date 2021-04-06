@@ -2,6 +2,7 @@ import squatProgression from './squat-progression';
 import hingeProgression from './hinge-progression';
 
 const yuri = {
+  category: 'warmup',
   name: 'yuri',
   label: 'Yuri\'s Shoulder Band Warmup',
   range: '5-10',
@@ -10,6 +11,7 @@ const yuri = {
 };
 
 const squatSkyReach = {
+  category: 'warmup',
   name: 'squatSkyReach',
   label: 'Squat Sky Reach',
   range: '5-10',
@@ -18,6 +20,7 @@ const squatSkyReach = {
 };
 
 const gmbWristPrep = {
+  category: 'warmup',
   name: 'gmbWristPrep',
   label: 'GMB Wrist Prep',
   range: '10+',
@@ -26,6 +29,7 @@ const gmbWristPrep = {
 };
 
 const deadbug = {
+  category: 'warmup',
   name: 'deadbug',
   label: 'Deadbug',
   range: '30s',
@@ -39,6 +43,7 @@ const deadbug = {
 };
 
 const archHang = {
+  category: 'warmup',
   name: 'archHang',
   label: 'Arch Hang',
   range: '10',
@@ -47,12 +52,14 @@ const archHang = {
 };
 
 const supportHold = {
+  category: 'warmup',
   name: 'supportHold',
   label: 'Support Hold',
   range: '30s',
 };
 
 const easierSquat = {
+  category: 'warmup',
   name: 'easierSquat',
   label: 'Easier Squat',
   range: '10',
@@ -68,6 +75,7 @@ const easierSquat = {
 };
 
 const easierHinge = {
+  category: 'warmup',
   name: 'easierHinge',
   label: 'Easier Hinge',
   range: '10',

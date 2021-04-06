@@ -65,12 +65,13 @@ test('setStrengthworkRecord', () => {
         pullup: {
           level: 0,
           exercise: 'foo',
-          reps: [],
+          set1: 0,
+          set2: 0,
+          set3: 0,
         },
         squat: {
           level: 0,
           exercise: 'bar',
-          reps: [],
         },
       },
     },
@@ -78,9 +79,11 @@ test('setStrengthworkRecord', () => {
 
   const state = reducer(initialState, setStrengthworkRecord({
     category: 'pullup',
-    reps: [8, 8, 8],
+    name: 'pullup',
+    set: 1,
+    reps: 8,
   }));
 
-  expect(state.record.strengthwork.pullup.reps).toStrictEqual([8, 8, 8]);
+  expect(state.record.strengthwork.pullup.set1).toStrictEqual(8);
   expect(state.record.strengthwork.squat).toStrictEqual(initialState.record.strengthwork.squat);
 });

@@ -49,20 +49,9 @@ describe('WorkoutPage', () => {
   });
 
   describe('strengthwork', () => {
-    it('displays category, exercise, level, range, and reps for 3 of the sets', () => {
-      cy.get('strengthwork header')
-        .should('have.text', '계열')
-        .and('have.text', '운동')
-        .and('have.text', '난이도')
-        .and('have.text', '범위')
-        .and('have.text', '1세트')
-        .and('have.text', '2세트')
-        .and('have.text', '3세트');
-    });
-
     it('can input exercise reps', () => {
       cy.get('#fieldset-strengthwork')
-        .find('exercise rep inputs')
+        .find('input[type="number"]')
         .each((element) => {
           cy.wrap(element)
             .type(10);
@@ -70,26 +59,26 @@ describe('WorkoutPage', () => {
     });
     it('activates or deactivates a input field by clicking the button', () => {
       cy.get('#fieldset-strengthwork')
-        .find('all the buttons')
+        .find('button')
         .each((element) => {
           cy.wrap(element)
             .click();
         })
         .get('#fieldset-strengthwork')
-        .find('all the inputs')
+        .find('input')
         .each((element) => {
           cy.wrap(element)
             .should('be.disabled');
         });
 
       cy.get('#fieldset-strengthwork')
-        .find('all the buttons')
+        .find('button')
         .each((element) => {
           cy.wrap(element)
             .click();
         })
         .get('#fieldset-strengthwork')
-        .find('all the inputs')
+        .find('input')
         .each((element) => {
           cy.wrap(element)
             .should('not.be.disabled');
