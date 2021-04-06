@@ -1,4 +1,5 @@
 const reverseHyperextension = {
+  category: 'extension',
   level: 1,
   name: 'reverseHyperextension',
   label: 'Reverse Hyperextension',

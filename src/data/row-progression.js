@@ -1,4 +1,5 @@
 const verticalRow = {
+  category: 'row',
   level: 1,
   name: 'verticalRow',
   label: 'Vertical Row',
@@ -10,6 +11,7 @@ const verticalRow = {
 };
 
 const inclineRow = {
+  category: 'row',
   level: 2,
   name: 'inclineRow',
   label: 'Incline Row',
@@ -22,6 +24,7 @@ const inclineRow = {
 };
 
 const horizontalRow = {
+  category: 'row',
   level: 3,
   name: 'horizontalRow',
   label: 'Horizontal Row',
@@ -37,6 +40,7 @@ const horizontalRow = {
 };
 
 const wideRow = {
+  category: 'row',
   level: 4,
   name: 'wideRow',
   label: 'Wide Row',
@@ -50,6 +54,7 @@ const wideRow = {
 };
 
 const weightedInvertedRow = {
+  category: 'row',
   level: 5,
   name: 'weightedInvertedRow',
   label: 'Weighted Inverted Row',

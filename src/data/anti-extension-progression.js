@@ -1,4 +1,5 @@
 const plank = {
+  category: 'anti-extension',
   level: 1,
   name: 'plank',
   label: 'Plank',
@@ -11,6 +12,7 @@ const plank = {
 };
 
 const ringAbRollout = {
+  category: 'anti-extension',
   level: 2,
   name: 'ringAbRollout',
   label: 'Ring Ab Rollout',

@@ -1,4 +1,5 @@
 const assistedSquat = {
+  category: 'squat',
   level: 1,
   name: 'assistedSquat',
   label: 'Assisted Squat',
@@ -11,6 +12,7 @@ const assistedSquat = {
 };
 
 const squat = {
+  category: 'squat',
   level: 2,
   name: 'squat',
   label: 'Squat',
@@ -26,6 +28,7 @@ const squat = {
 };
 
 const splitSquat = {
+  category: 'squat',
   level: 3,
   name: 'splitSquat',
   label: 'Split Squat',
@@ -38,6 +41,7 @@ const splitSquat = {
 };
 
 const bulgarianSplitSquat = {
+  category: 'squat',
   level: 4,
   name: 'bulgarianSplitSquat',
   label: 'Bulgarian Split Squat',
@@ -50,6 +54,7 @@ const bulgarianSplitSquat = {
 };
 
 const shrimpSquat = {
+  category: 'squat',
   level: 5,
   name: 'shrimpSquat',
   label: 'Shrimp Squat',

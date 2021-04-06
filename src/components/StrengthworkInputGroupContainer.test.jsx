@@ -1,18 +1,17 @@
 import React from 'react';
 
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import Workout from './Workout';
+import StrengthworkInputGroupContainer from './StrengthworkInputGroupContainer';
 
 jest.mock('react-redux');
 
-describe('WorkoutPage', () => {
+describe('StrengthworkInputGroupContainer', () => {
   it('renders without crash', () => {
-    useSelector.mockImplementation((selector) => selector({
+    useSelector.mockImplementation((selector) => (selector({
       setting: {
-        warmup: {},
         strengthwork: {
           pullup: 'pullup',
           squat: 'squat',
@@ -25,9 +24,7 @@ describe('WorkoutPage', () => {
           extension: 'reverseHyperextension',
         },
       },
-      warmups: [],
       record: {
-        warmup: {},
         strengthwork: {
           pullup: {
             set1: '',
@@ -76,12 +73,30 @@ describe('WorkoutPage', () => {
           },
         },
       },
-    }));
+    })));
 
-    const { container } = render(
-      <Workout />,
-    );
+    render(<StrengthworkInputGroupContainer />);
+  });
 
-    expect(container).toHaveTextContent('Workout');
+  it('dispatches setStrengthworkRecord action', () => {
+    const dispatch = jest.fn();
+
+    useDispatch.mockImplementation(() => dispatch);
+
+    const { container } = render(<StrengthworkInputGroupContainer />);
+
+    const input = container.querySelector('#pullup-set-1');
+
+    fireEvent.change(input, { target: { value: 99 } });
+
+    expect(dispatch).toBeCalledTimes(1);
+  });
+
+  it('toggles strengthwork input by the button', () => {
+    const { container } = render(<StrengthworkInputGroupContainer />);
+
+    const button = container.querySelector('#toggle-pullup-set-1');
+
+    fireEvent.click(button);
   });
 });

@@ -1,4 +1,5 @@
 const scapularPull = {
+  category: 'pullup',
   level: 1,
   name: 'scapularPull',
   label: 'Scapular Pull',
@@ -13,6 +14,7 @@ const scapularPull = {
 };
 
 const archHang = {
+  category: 'pullup',
   level: 2,
   name: 'archHang',
   label: 'Arch Hang',
@@ -26,6 +28,7 @@ const archHang = {
 };
 
 const negativePullup = {
+  category: 'pullup',
   level: 3,
   name: 'negativePullup',
   label: 'Negative Pullup',
@@ -38,6 +41,7 @@ const negativePullup = {
 };
 
 const pullup = {
+  category: 'pullup',
   level: 4,
   name: 'pullup',
   label: 'Pullup',
@@ -54,6 +58,7 @@ const pullup = {
 };
 
 const weightedPullup = {
+  category: 'pullup',
   level: 5,
   name: 'weightedPullup',
   label: 'Weighted Pullup',

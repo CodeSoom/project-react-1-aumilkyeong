@@ -1,4 +1,5 @@
 const supportHold = {
+  category: 'dip',
   level: 1,
   name: 'supportHold',
   label: 'Parallel Bar Support Hold',
@@ -13,6 +14,7 @@ const supportHold = {
 };
 
 const negativeDip = {
+  category: 'dip',
   level: 2,
   name: 'negativeDip',
   label: 'Negative Dip',
@@ -28,6 +30,7 @@ const negativeDip = {
 };
 
 const dip = {
+  category: 'dip',
   level: 3,
   name: 'dip',
   label: 'Parallel Bar Dip',
@@ -43,6 +46,7 @@ const dip = {
 };
 
 const weightedDip = {
+  category: 'dip',
   level: 4,
   name: 'weightedDip',
   label: 'Weighted Dip',

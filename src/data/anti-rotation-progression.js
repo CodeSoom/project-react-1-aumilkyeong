@@ -1,4 +1,5 @@
 const bandedPallofPress = {
+  category: 'anti-rotation',
   level: 1,
   name: 'bandedPallofPress',
   label: 'Banded Pallof Press',

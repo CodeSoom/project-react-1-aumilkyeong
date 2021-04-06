@@ -1,4 +1,5 @@
 const verticalPushup = {
+  category: 'pushup',
   level: 1,
   name: 'verticalPushup',
   label: 'Vertical Pushup',
@@ -12,6 +13,7 @@ const verticalPushup = {
 };
 
 const inclinePushup = {
+  category: 'pushup',
   level: 2,
   name: 'inclinePushup',
   label: 'Incline Pushup',
@@ -24,6 +26,7 @@ const inclinePushup = {
 };
 
 const pushup = {
+  category: 'pushup',
   level: 3,
   name: 'pushup',
   label: 'Pushup',
@@ -39,6 +42,7 @@ const pushup = {
 };
 
 const diamondPushup = {
+  category: 'pushup',
   level: 4,
   name: 'diamondPushup',
   label: 'Diamond Pushup',
@@ -52,6 +56,7 @@ const diamondPushup = {
 };
 
 const pseudoPlanchePushup = {
+  category: 'pushup',
   level: 5,
   name: 'pseudoPlanchePushup',
   label: 'Pseudo Planche Pushup',
