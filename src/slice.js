@@ -81,6 +81,10 @@ const { actions, reducer } = createSlice({
     },
     warmups,
     progressions,
+    demo: {
+      isDemoMode: false,
+      source: [],
+    },
   },
   reducers: {
     setWarmup(state, { payload: { exercise } }) {
