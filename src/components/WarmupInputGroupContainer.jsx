@@ -64,7 +64,7 @@ export default function WarmupInputGroupContainer() {
     }));
   }
 
-  function handleChange(event) {
+  function handleRepsChange(event) {
     const { id, valueAsNumber } = event.target;
 
     dispatch(setWarmupRecord({
@@ -83,8 +83,8 @@ export default function WarmupInputGroupContainer() {
         <section>Demo Section</section>
         <WarmupInputGroup
           workout={workout}
-          onChange={handleChange}
-          onClick={toggleInputActivation}
+          handleRepsChange={handleRepsChange}
+          handleLockClick={toggleInputActivation}
           handleDemoClick={toggleDemoSection}
         />
       </>
@@ -94,8 +94,8 @@ export default function WarmupInputGroupContainer() {
   return (
     <WarmupInputGroup
       workout={workout}
-      onChange={handleChange}
-      onClick={toggleInputActivation}
+      handleRepsChange={handleRepsChange}
+      handleLockClick={toggleInputActivation}
       handleDemoClick={toggleDemoSection}
     />
   );

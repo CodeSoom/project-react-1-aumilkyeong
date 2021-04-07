@@ -3,7 +3,7 @@ import React from 'react';
 import WarmupInput from './WarmupInput';
 
 export default function WarmupInputGroup({
-  workout, onChange, onClick, handleDemoClick,
+  workout, handleRepsChange, handleLockClick, handleDemoClick,
 }) {
   return (
     <fieldset id="fieldset-warmup">
@@ -19,8 +19,8 @@ export default function WarmupInputGroup({
           <WarmupInput
             key={exercise.name}
             exercise={exercise}
-            onChange={onChange}
-            onClick={onClick}
+            handleRepsChange={handleRepsChange}
+            handleLockClick={handleLockClick}
             handleDemoClick={handleDemoClick}
           />
         ))}
