@@ -76,6 +76,10 @@ describe('WorkoutForm', () => {
           },
         },
       },
+      demo: {
+        isDemoMode: false,
+        source: [],
+      },
     }));
 
     render(<WorkoutForm />);

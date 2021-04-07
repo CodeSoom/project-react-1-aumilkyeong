@@ -111,6 +111,10 @@ describe('App', () => {
           },
         },
       },
+      demo: {
+        isDemoMode: false,
+        source: [],
+      },
     }));
   });
 

@@ -76,6 +76,10 @@ describe('WorkoutPage', () => {
           },
         },
       },
+      demo: {
+        isDemoMode: false,
+        source: [],
+      },
     }));
 
     const { container } = render(

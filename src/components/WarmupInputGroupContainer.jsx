@@ -27,6 +27,7 @@ export default function WarmupInputGroupContainer() {
   const squat = useSelector((state) => state.setting.strengthwork.squat);
   const hinge = useSelector((state) => state.setting.strengthwork.hinge);
   const record = useSelector((state) => state.record.warmup);
+  const { isDemoMode, source } = useSelector((state) => state.demo);
 
   const checkedList = Object
     .entries(setting)
@@ -68,6 +69,19 @@ export default function WarmupInputGroupContainer() {
       reps: record[name] || '',
     };
   });
+
+  if (isDemoMode) {
+    return (
+      <>
+        <section>Demo Section</section>
+        <WarmupInputGroup
+          workout={workout}
+          onChange={handleChange}
+          onClick={toggleInputActivation}
+        />
+      </>
+    );
+  }
 
   return (
     <WarmupInputGroup
