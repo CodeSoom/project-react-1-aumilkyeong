@@ -143,6 +143,16 @@ const { actions, reducer } = createSlice({
         },
       };
     },
+    setDemo(state, { payload: { isDemoMode, source = [] } }) {
+      return {
+        ...state,
+        demo: {
+          ...state.demo,
+          isDemoMode,
+          source,
+        },
+      };
+    },
   },
 });
 
@@ -151,6 +161,7 @@ export const {
   setStrengthwork,
   setWarmupRecord,
   setStrengthworkRecord,
+  setDemo,
 } = actions;
 
 export default reducer;

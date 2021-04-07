@@ -3,6 +3,7 @@ import reducer, {
   setStrengthwork,
   setWarmupRecord,
   setStrengthworkRecord,
+  setDemo,
 } from './slice';
 
 test('setWarmup', () => {
@@ -86,4 +87,32 @@ test('setStrengthworkRecord', () => {
 
   expect(state.record.strengthwork.pullup.set1).toStrictEqual(8);
   expect(state.record.strengthwork.squat).toStrictEqual(initialState.record.strengthwork.squat);
+});
+
+describe('setDemo', () => {
+  const initialState = {
+    demo: {
+      isDemoMode: false,
+      source: [],
+    },
+  };
+
+  it('changes demo state with following payload', () => {
+    const state = reducer(initialState, setDemo({
+      isDemoMode: true,
+      source: ['foo', 'bar'],
+    }));
+
+    expect(state.demo.isDemoMode).toBe(true);
+    expect(state.demo.source).toStrictEqual(['foo', 'bar']);
+  });
+
+  it('clears demo.source state without source payload', () => {
+    const state = reducer(initialState, setDemo({
+      isDemoMode: true,
+    }));
+
+    expect(state.demo.isDemoMode).toBe(true);
+    expect(state.demo.source).toStrictEqual([]);
+  });
 });
