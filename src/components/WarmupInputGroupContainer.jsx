@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setDemo, setWarmupRecord } from '../slice';
 
 import WarmupInputGroup from './WarmupInputGroup';
+import Demo from './Demo';
 
 export default function WarmupInputGroupContainer() {
   const setting = useSelector((state) => state.setting.warmup);
@@ -80,7 +81,7 @@ export default function WarmupInputGroupContainer() {
   if (isDemoMode) {
     return (
       <>
-        <section>Demo Section</section>
+        <Demo source={source} />
         <WarmupInputGroup
           workout={workout}
           handleRepsChange={handleRepsChange}

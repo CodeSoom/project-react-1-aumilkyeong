@@ -67,7 +67,7 @@ describe('WarmupInputGroupContainer', () => {
   });
 
   context('with DemoMode', () => {
-    it('renders demo section', () => {
+    it('can click demo button', () => {
       useSelector.mockImplementation((selector) => selector({
         setting: {
           warmup: {
@@ -95,21 +95,15 @@ describe('WarmupInputGroupContainer', () => {
         },
         demo: {
           isDemoMode: true,
-          source: [],
+          source: ['Demo Section'],
         },
       }));
 
       const { container } = render(<WarmupInputGroupContainer />);
 
-      expect(container).toHaveTextContent('Demo Section');
+      const button = container.querySelector('#demo-easierSquat');
+
+      fireEvent.click(button);
     });
-  });
-
-  it('toggles demo section by clicking button', () => {
-    const { container } = render(<WarmupInputGroupContainer />);
-
-    const button = container.querySelector('#demo-easierSquat');
-
-    fireEvent.click(button);
   });
 });
