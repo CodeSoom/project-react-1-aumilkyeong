@@ -2,7 +2,9 @@ import React from 'react';
 
 import WorkoutGroup from './WorkoutGroup';
 
-export default function StrengthworkInputGroup({ workout, onChange, onClick }) {
+export default function StrengthworkInputGroup({
+  workout, handleRepsChange, handleLockClick, handleDemoClick,
+}) {
   const {
     pullup, squat, dip, hinge, row, pushup, antiExtension, antiRotation, extension,
   } = workout;
@@ -20,26 +22,30 @@ export default function StrengthworkInputGroup({ workout, onChange, onClick }) {
       <WorkoutGroup
         legend="Group 1"
         workout={firstPair}
-        onChange={onChange}
-        onClick={onClick}
+        handleRepsChange={handleRepsChange}
+        handleLockClick={handleLockClick}
+        handleDemoClick={handleDemoClick}
       />
       <WorkoutGroup
         legend="Group 2"
         workout={secondPair}
-        onChange={onChange}
-        onClick={onClick}
+        handleRepsChange={handleRepsChange}
+        handleLockClick={handleLockClick}
+        handleDemoClick={handleDemoClick}
       />
       <WorkoutGroup
         legend="Group 3"
         workout={thirdPair}
-        onChange={onChange}
-        onClick={onClick}
+        handleRepsChange={handleRepsChange}
+        handleLockClick={handleLockClick}
+        handleDemoClick={handleDemoClick}
       />
       <WorkoutGroup
         legend="Group 4"
         workout={coreTriplet}
-        onChange={onChange}
-        onClick={onClick}
+        handleRepsChange={handleRepsChange}
+        handleLockClick={handleLockClick}
+        handleDemoClick={handleDemoClick}
       />
     </fieldset>
   );

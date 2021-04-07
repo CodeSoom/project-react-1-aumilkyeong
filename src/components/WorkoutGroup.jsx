@@ -3,7 +3,7 @@ import React from 'react';
 import Exercise from './Exercise';
 
 export default function WorkoutGroup({
-  legend, workout, onChange, onClick,
+  legend, workout, handleRepsChange, handleLockClick, handleDemoClick,
 }) {
   const sections = ['계열', '운동', '난이도', '범위', '1세트', '2세트', '3세트'];
 
@@ -19,8 +19,9 @@ export default function WorkoutGroup({
         <Exercise
           key={exercise.name}
           exercise={exercise}
-          onChange={onChange}
-          onClick={onClick}
+          handleRepsChange={handleRepsChange}
+          handleLockClick={handleLockClick}
+          handleDemoClick={handleDemoClick}
         />
       ))}
     </fieldset>

@@ -58,7 +58,7 @@ export default function WarmupInputGroupContainer() {
 
   const dispatch = useDispatch();
 
-  function toggleDemoSection({ demos = [] }) {
+  function toggleDemoSection({ demos }) {
     dispatch(setDemo({
       isDemoMode: !isDemoMode,
       source: demos,
