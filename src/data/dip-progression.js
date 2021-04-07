@@ -20,7 +20,7 @@ const negativeDip = {
   label: 'Negative Dip',
   range: '5-8',
   demos: [
-    'https://www.youtube.com/watch?v=T3Scqw1BbCc',
+    'https://www.youtube.com/embed/T3Scqw1BbCc',
   ],
   tips: [
     '점프, 박스 등 원하는 방식으로 시작 자세를 잡기',
@@ -35,7 +35,7 @@ const dip = {
   name: 'dip',
   label: 'Parallel Bar Dip',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=2z8JmcrW-As'],
+  demos: ['https://www.youtube.com/embed/2z8JmcrW-As'],
   tips: [
     '곧은 자세 또는 얕은 할로우 바디 자세',
     '엉덩이 굽히지 않기',

@@ -4,7 +4,7 @@ const verticalRow = {
   name: 'verticalRow',
   label: 'Vertical Row',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=rloXYB8M3vU'],
+  demos: ['https://www.youtube.com/embed/rloXYB8M3vU'],
   tips: [
     '몸을 수직으로 세운 상태에서 로우',
   ],
@@ -16,7 +16,7 @@ const inclineRow = {
   name: 'inclineRow',
   label: 'Incline Row',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=LR2EnFWpVao'],
+  demos: ['https://www.youtube.com/embed/LR2EnFWpVao'],
   tips: [
     '몸을 비스듬하게 누운 자세에서 로우',
     '몸을 땅으로 수평에 가깝게 눕힐수록 난이도 증가',
@@ -29,7 +29,7 @@ const horizontalRow = {
   name: 'horizontalRow',
   label: 'Horizontal Row',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=dvkIaarnf0g'],
+  demos: ['https://www.youtube.com/embed/dvkIaarnf0g'],
   tips: [
     '척추 중립 자세',
     '팔꿈치 몸쪽으로 붙이기',
@@ -45,7 +45,7 @@ const wideRow = {
   name: 'wideRow',
   label: 'Wide Row',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=1yMRvsuk9Xg'],
+  demos: ['https://www.youtube.com/embed/1yMRvsuk9Xg'],
   tips: [
     '팔꿈치 몸에서 떨어져도 괜찮음',
     '어깨너비 1.5배 정도로 와이드 그립',
@@ -59,7 +59,7 @@ const weightedInvertedRow = {
   name: 'weightedInvertedRow',
   label: 'Weighted Inverted Row',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=3cYR6pis5zc'],
+  demos: ['https://www.youtube.com/embed/3cYR6pis5zc'],
   tips: [
     '원판을 가슴이나 복부에 올리는 방법은 불편하고 불안정',
     '중량 조끼는 간편하지만 무게가 제한적',

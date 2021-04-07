@@ -19,7 +19,7 @@ const singleLeggedDeadlift = {
   name: 'singleLeggedDeadlift',
   label: 'Single Legged Deadlift',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=iDV8r5u6En0'],
+  demos: ['https://www.youtube.com/embed/iDV8r5u6En0'],
   tips: [
     '중량 도구 없이 맨몸으로 수행',
     '중심 잡기가 어렵다면 팔이나 다리를 늘어뜨려 조정',
@@ -32,7 +32,7 @@ const negativeBandedNordicCurl = {
   name: 'negativeBandedNordicCurl',
   label: 'Negative Banded Nordic Curl',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=HUXS3S2xSX4'],
+  demos: ['https://www.youtube.com/embed/HUXS3S2xSX4'],
   tips: [
     '무게를 충분히 지탱할 수 있는 곳에 발을 고정',
     '엉덩이가 길게 늘어난 상태를 유지하기 위해 근육 수축',
@@ -46,7 +46,7 @@ const bandedNordicCurl = {
   name: 'bandedNordicCurl',
   label: 'Banded Nordic Curl',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=HUXS3S2xSX4'],
+  demos: ['https://www.youtube.com/embed/HUXS3S2xSX4'],
   tips: [
     '무게를 충분히 지탱할 수 있는 곳에 발을 고정',
     '엉덩이가 길게 늘어난 상태를 유지하기 위해 근육 수축',
@@ -60,7 +60,7 @@ const nordicCurl = {
   name: 'nordicCurl',
   label: 'Nordic Curl',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=d8AAPcYxPo8'],
+  demos: ['https://www.youtube.com/embed/d8AAPcYxPo8'],
   tips: [
     '무게를 충분히 지탱할 수 있는 곳에 발을 고정',
     '엉덩이가 길게 늘어난 상태를 유지하기 위해 근육 수축',

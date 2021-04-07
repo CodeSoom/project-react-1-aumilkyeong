@@ -4,7 +4,7 @@ const reverseHyperextension = {
   name: 'reverseHyperextension',
   label: 'Reverse Hyperextension',
   range: '8-12',
-  demos: ['https://www.youtube.com/watch?v=ZeRsNzFcQLQ'],
+  demos: ['https://www.youtube.com/embed/ZeRsNzFcQLQ'],
   tips: [
     '엉덩이를 위로 내밀지 않게 주의',
   ],
