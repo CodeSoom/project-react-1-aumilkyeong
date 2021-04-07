@@ -7,9 +7,16 @@ export default function Exercise({
     category, name, label, level, range, record, demos,
   } = exercise;
 
+  const converter = {
+    antiExtension: 'anti-extension',
+    antiRotation: 'anti-rotation',
+  };
+
+  const categoryLabel = converter[category] ? converter[category] : category;
+
   return (
     <section key={name}>
-      <span>{category.toUpperCase()}</span>
+      <span>{categoryLabel.toUpperCase()}</span>
       <span>{label}</span>
       <span>{level}</span>
       <span>{range}</span>
