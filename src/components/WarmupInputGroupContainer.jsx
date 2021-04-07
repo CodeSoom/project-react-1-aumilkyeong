@@ -2,26 +2,11 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setWarmupRecord } from '../slice';
+import { setDemo, setWarmupRecord } from '../slice';
 
 import WarmupInputGroup from './WarmupInputGroup';
 
 export default function WarmupInputGroupContainer() {
-  const dispatch = useDispatch();
-
-  function handleChange(event) {
-    const { id, valueAsNumber } = event.target;
-
-    dispatch(setWarmupRecord({
-      exercise: id,
-      reps: valueAsNumber,
-    }));
-  }
-
-  function toggleInputActivation({ id }) {
-    document.querySelector(`#${id}`).disabled = !document.querySelector(`#${id}`).disabled;
-  }
-
   const setting = useSelector((state) => state.setting.warmup);
   const warmups = useSelector((state) => state.warmups);
   const squat = useSelector((state) => state.setting.strengthwork.squat);
@@ -70,6 +55,28 @@ export default function WarmupInputGroupContainer() {
     };
   });
 
+  const dispatch = useDispatch();
+
+  function toggleDemoSection({ demos = [] }) {
+    dispatch(setDemo({
+      isDemoMode: !isDemoMode,
+      source: demos,
+    }));
+  }
+
+  function handleChange(event) {
+    const { id, valueAsNumber } = event.target;
+
+    dispatch(setWarmupRecord({
+      exercise: id,
+      reps: valueAsNumber,
+    }));
+  }
+
+  function toggleInputActivation({ id }) {
+    document.querySelector(`#${id}`).disabled = !document.querySelector(`#${id}`).disabled;
+  }
+
   if (isDemoMode) {
     return (
       <>
@@ -78,6 +85,7 @@ export default function WarmupInputGroupContainer() {
           workout={workout}
           onChange={handleChange}
           onClick={toggleInputActivation}
+          handleDemoClick={toggleDemoSection}
         />
       </>
     );
@@ -88,6 +96,7 @@ export default function WarmupInputGroupContainer() {
       workout={workout}
       onChange={handleChange}
       onClick={toggleInputActivation}
+      handleDemoClick={toggleDemoSection}
     />
   );
 }

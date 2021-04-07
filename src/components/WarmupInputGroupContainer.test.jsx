@@ -104,4 +104,12 @@ describe('WarmupInputGroupContainer', () => {
       expect(container).toHaveTextContent('Demo Section');
     });
   });
+
+  it('toggles demo section by clicking button', () => {
+    const { container } = render(<WarmupInputGroupContainer />);
+
+    const button = container.querySelector('#demo-easierSquat');
+
+    fireEvent.click(button);
+  });
 });
