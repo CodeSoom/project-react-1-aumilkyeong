@@ -1,10 +1,10 @@
 const plank = {
-  category: 'anti-extension',
+  category: 'antiExtension',
   level: 1,
   name: 'plank',
   label: 'Plank',
   range: '30s',
-  demos: ['https://www.youtube.com/watch?v=44ScXWFaVBs&t=10s'],
+  demos: ['https://www.youtube.com/embed/44ScXWFaVBs?start=10'],
   tips: [
     '3세트 모두 30초를 버틸 수 있다면 다음 단계로',
     '시범 비디오의 여러 동작 중 플랭크만 하면 됨',
@@ -12,12 +12,12 @@ const plank = {
 };
 
 const ringAbRollout = {
-  category: 'anti-extension',
+  category: 'antiExtension',
   level: 2,
   name: 'ringAbRollout',
   label: 'Ring Ab Rollout',
   range: '8-12',
-  demos: ['https://www.youtube.com/watch?v=LBUfnmugKLw'],
+  demos: ['https://www.youtube.com/embed/LBUfnmugKLw'],
   tips: [
     '팔꿈치 곧게 유지',
     '할로우 바디 자세 유지(갈비뼈 내리고 엉덩이 집어넣기)',

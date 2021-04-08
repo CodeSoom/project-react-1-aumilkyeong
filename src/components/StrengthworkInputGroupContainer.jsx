@@ -3,15 +3,20 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import progressions from '../data/progressions';
-import { setStrengthworkRecord } from '../slice';
+
+import {
+  setStrengthworkRecord,
+  setDemo,
+} from '../slice';
 
 import StrengthworkInputGroup from './StrengthworkInputGroup';
 
-export default function StrengthworkInputGroupContainer() {
-  const dispatch = useDispatch();
+import Demo from './Demo';
 
+export default function StrengthworkInputGroupContainer() {
   const setting = useSelector((state) => state.setting.strengthwork);
   const record = useSelector((state) => state.record.strengthwork);
+  const { isDemoMode, source } = useSelector((state) => state.demo);
 
   const workout = Object.fromEntries(
     Object.entries(setting)
@@ -33,11 +38,13 @@ export default function StrengthworkInputGroupContainer() {
       }),
   );
 
+  const dispatch = useDispatch();
+
   function toggleInputActivation({ id }) {
     document.querySelector(`#${id}`).disabled = !document.querySelector(`#${id}`).disabled;
   }
 
-  function handleChange(exercise, event) {
+  function handleRepsChange(exercise, event) {
     const { category, name, set } = exercise;
     const { valueAsNumber } = event.target;
 
@@ -49,11 +56,33 @@ export default function StrengthworkInputGroupContainer() {
     }));
   }
 
+  function toggleDemoSection({ demos }) {
+    dispatch(setDemo({
+      isDemoMode: !isDemoMode,
+      source: demos,
+    }));
+  }
+
+  if (isDemoMode) {
+    <>
+      <Demo
+        source={source}
+      />
+      <StrengthworkInputGroup
+        workout={workout}
+        handleRepsChange={handleRepsChange}
+        handleLockClick={toggleInputActivation}
+        handleDemoClick={toggleDemoSection}
+      />
+    </>;
+  }
+
   return (
     <StrengthworkInputGroup
       workout={workout}
-      onChange={handleChange}
-      onClick={toggleInputActivation}
+      handleRepsChange={handleRepsChange}
+      handleLockClick={toggleInputActivation}
+      handleDemoClick={toggleDemoSection}
     />
   );
 }

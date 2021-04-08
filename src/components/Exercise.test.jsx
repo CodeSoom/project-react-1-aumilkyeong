@@ -36,14 +36,35 @@ describe('Exercise', () => {
     const { container } = render(
       <Exercise
         exercise={exercise}
-        onChange={handleChange}
+        handleRepsChange={handleChange}
       />,
     );
 
     const input = container.querySelector('#foo-set-1');
-
     fireEvent.change(input, { target: { value: 99 } });
-
     expect(input.valueAsNumber).toBe(99);
+  });
+
+  it('toggles demo section and input of the exercise by clicking each button', () => {
+    const handleReps = jest.fn();
+    const handleLock = jest.fn();
+    const handleDemo = jest.fn();
+
+    const { container } = render(
+      <Exercise
+        exercise={exercise}
+        handleRepsChange={handleReps}
+        handleLockClick={handleLock}
+        handleDemoClick={handleDemo}
+      />,
+    );
+
+    const lock = container.querySelector('#toggle-foo-set-1');
+    fireEvent.click(lock);
+    expect(handleLock).toBeCalledTimes(1);
+
+    const demo = container.querySelector('#demo-foo');
+    fireEvent.click(demo);
+    expect(handleDemo).toBeCalledTimes(1);
   });
 });

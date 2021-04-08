@@ -18,7 +18,7 @@ const inclinePushup = {
   name: 'inclinePushup',
   label: 'Incline Pushup',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=4dF1DOWzf20&t=236s'],
+  demos: ['https://www.youtube.com/embed/4dF1DOWzf20?start=236'],
   tips: [
     '암석, 벤치, 박스 등 땅에 고정된 물체를 찾아 손을 대고 푸쉬업',
     '물체의 높이가 낮을 수록 난이도 증가',
@@ -31,7 +31,7 @@ const pushup = {
   name: 'pushup',
   label: 'Pushup',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=IODxDxX7oi4'],
+  demos: ['https://www.youtube.com/embed/IODxDxX7oi4'],
   tips: [
     '몸을 머리부터 발끝까지 곧게 핀 자세 유지: 엉덩이 내밀지 않도록 주의',
     '최고점에서 팔 락아웃 및 견갑골 전인',
@@ -47,7 +47,7 @@ const diamondPushup = {
   name: 'diamondPushup',
   label: 'Diamond Pushup',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=_4EGPVJuqfA'],
+  demos: ['https://www.youtube.com/embed/_4EGPVJuqfA'],
   tips: [
     '엄지와 검지끼리 맞닿도록 손을 가까이 대고 푸쉬업',
     '어렵거나 불편한 경우, 일반 푸쉬업에서 조금만 손 사이 간격 좁게 조정',
@@ -61,7 +61,7 @@ const pseudoPlanchePushup = {
   name: 'pseudoPlanchePushup',
   label: 'Pseudo Planche Pushup',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=Cdmg0CfMZeo'],
+  demos: ['https://www.youtube.com/embed/Cdmg0CfMZeo'],
   tips: [
     '손가락이 몸 바깥 방향을 향하게 짚고, 어깨가 손 위치보다 앞으로 향하게 몸을 앞으로 기울인 뒤, 어깨뼈 전인 상태의 곧은 자세로 푸쉬업',
     '몸을 앞으로 기울일수록 난이도 증가',

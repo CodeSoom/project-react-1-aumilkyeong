@@ -2,31 +2,18 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setWarmupRecord } from '../slice';
+import { setDemo, setWarmupRecord } from '../slice';
 
 import WarmupInputGroup from './WarmupInputGroup';
+import Demo from './Demo';
 
 export default function WarmupInputGroupContainer() {
-  const dispatch = useDispatch();
-
-  function handleChange(event) {
-    const { id, valueAsNumber } = event.target;
-
-    dispatch(setWarmupRecord({
-      exercise: id,
-      reps: valueAsNumber,
-    }));
-  }
-
-  function toggleInputActivation({ id }) {
-    document.querySelector(`#${id}`).disabled = !document.querySelector(`#${id}`).disabled;
-  }
-
   const setting = useSelector((state) => state.setting.warmup);
   const warmups = useSelector((state) => state.warmups);
   const squat = useSelector((state) => state.setting.strengthwork.squat);
   const hinge = useSelector((state) => state.setting.strengthwork.hinge);
   const record = useSelector((state) => state.record.warmup);
+  const { isDemoMode, source } = useSelector((state) => state.demo);
 
   const checkedList = Object
     .entries(setting)
@@ -69,11 +56,48 @@ export default function WarmupInputGroupContainer() {
     };
   });
 
+  const dispatch = useDispatch();
+
+  function toggleDemoSection({ demos }) {
+    dispatch(setDemo({
+      isDemoMode: !isDemoMode,
+      source: demos,
+    }));
+  }
+
+  function handleRepsChange(event) {
+    const { id, valueAsNumber } = event.target;
+
+    dispatch(setWarmupRecord({
+      exercise: id,
+      reps: valueAsNumber,
+    }));
+  }
+
+  function toggleInputActivation({ id }) {
+    document.querySelector(`#${id}`).disabled = !document.querySelector(`#${id}`).disabled;
+  }
+
+  if (isDemoMode) {
+    return (
+      <>
+        <Demo source={source} />
+        <WarmupInputGroup
+          workout={workout}
+          handleRepsChange={handleRepsChange}
+          handleLockClick={toggleInputActivation}
+          handleDemoClick={toggleDemoSection}
+        />
+      </>
+    );
+  }
+
   return (
     <WarmupInputGroup
       workout={workout}
-      onChange={handleChange}
-      onClick={toggleInputActivation}
+      handleRepsChange={handleRepsChange}
+      handleLockClick={toggleInputActivation}
+      handleDemoClick={toggleDemoSection}
     />
   );
 }

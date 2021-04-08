@@ -18,7 +18,6 @@ describe('WorkoutPage', () => {
           cy.wrap(element).type('10');
         });
     });
-
     it('activates or deactivates a input field by clicking the button', () => {
       cy.get('#fieldset-warmup')
         .find('button[id^=toggle-]')
@@ -82,6 +81,20 @@ describe('WorkoutPage', () => {
         .each((element) => {
           cy.wrap(element)
             .should('not.be.disabled');
+        });
+    });
+    it('activates or deactivates the demo section by clicking the button', () => {
+      cy.get('#fieldset-strengthwork')
+        .find('button[id^=demo-]')
+        .each((element) => {
+          cy.wrap(element)
+            .click()
+            .get('.swiper-container');
+
+          cy.wrap(element)
+            .click()
+            .get('.swiper-container')
+            .should('not.exist');
         });
     });
   });

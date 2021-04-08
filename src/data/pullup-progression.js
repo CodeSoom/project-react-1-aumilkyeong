@@ -4,7 +4,7 @@ const scapularPull = {
   name: 'scapularPull',
   label: 'Scapular Pull',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=FgYoc4O-cio&t=81s'],
+  demos: ['https://www.youtube.com/embed/FgYoc4O-cio?start=81'],
   tips: [
     '팔꿈치 곧게 뻗어 유지',
     '최대 수축 지점에서 3~5초 간 어깨를 수축시키고 자세를 제어하면서 데드행으로 돌아오기',
@@ -19,7 +19,7 @@ const archHang = {
   name: 'archHang',
   label: 'Arch Hang',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=C995b3KLXS4&t=7s'],
+  demos: ['https://www.youtube.com/embed/C995b3KLXS4?start=7'],
   tips: [
     '팔꿈치 곧게 뻗어 유지',
     '시간, 횟수로 난이도 조절',
@@ -46,7 +46,7 @@ const pullup = {
   name: 'pullup',
   label: 'Pullup',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=eGo4IYlbE5g'],
+  demos: ['https://www.youtube.com/embed/eGo4IYlbE5g'],
   tips: [
     '운동하는 동안 몸은 얕은 할로우 자세, 다리는 곧게 편 상태 유지',
     '만약 다리를 펴기 어렵다면, 다리를 앞쪽으로 두기',

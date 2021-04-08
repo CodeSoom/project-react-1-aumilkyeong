@@ -4,7 +4,7 @@ const assistedSquat = {
   name: 'assistedSquat',
   label: 'Assisted Squat',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=OuR_Fp7AB0c'],
+  demos: ['https://www.youtube.com/embed/OuR_Fp7AB0c'],
   tips: [
     '손으로 뭔가 잡은 상태에서 스쿼트',
     '점차 손으로 지지하는 힘을 줄여나감',
@@ -17,7 +17,7 @@ const squat = {
   name: 'squat',
   label: 'Squat',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=zJBLDJMJiDE'],
+  demos: ['https://www.youtube.com/embed/zJBLDJMJiDE'],
   tips: [
     '최고점에서 곧게 서기',
     '가능한 낮게 내려갈 것, 엉덩이가 무릎보다 낮게 하는 것이 바람직',
@@ -46,7 +46,7 @@ const bulgarianSplitSquat = {
   name: 'bulgarianSplitSquat',
   label: 'Bulgarian Split Squat',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=kkdmHTASZg8&t=75s'],
+  demos: ['https://www.youtube.com/embed/kkdmHTASZg8?start=75'],
   tips: [
     '중량 도구 없이 맨몸으로 수행',
     '다리 위치를 높일수록 난이도 어려워짐',
@@ -59,7 +59,7 @@ const shrimpSquat = {
   name: 'shrimpSquat',
   label: 'Shrimp Squat',
   range: '5-8',
-  demos: ['https://www.youtube.com/watch?v=TKt0-c83GSc&t=189s'],
+  demos: ['https://www.youtube.com/embed/TKt0-c83GSc?start=189'],
   tips: [
     '초급: 무릎과 발가락을 바닥에서 동시에 떼기',
     '중급: 무릎만 바닥에 닫게 하기',

@@ -1,8 +1,10 @@
 import React from 'react';
 
-export default function WarmupInput({ exercise, onChange, onClick }) {
+export default function WarmupInput({
+  exercise, handleRepsChange, handleLockClick, handleDemoClick,
+}) {
   const {
-    name, label, range, reps,
+    name, label, range, reps, demos,
   } = exercise;
   return (
     <section key={name}>
@@ -11,17 +13,24 @@ export default function WarmupInput({ exercise, onChange, onClick }) {
       >
         {label}
         <span>{range}</span>
+        <button
+          type="button"
+          id={`demo-${name}`}
+          onClick={() => handleDemoClick({ demos })}
+        >
+          Demo
+        </button>
         <input
           type="number"
           id={name}
           name={name}
           value={reps}
-          onChange={onChange}
+          onChange={handleRepsChange}
         />
         <button
           type="button"
           id={`toggle-${name}`}
-          onClick={() => onClick({ id: name })}
+          onClick={() => handleLockClick({ id: name })}
         >
           완료
         </button>

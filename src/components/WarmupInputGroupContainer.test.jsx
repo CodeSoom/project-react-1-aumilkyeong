@@ -38,6 +38,10 @@ describe('WarmupInputGroupContainer', () => {
       record: {
         warmup: {},
       },
+      demo: {
+        isDemoMode: false,
+        source: [],
+      },
     }));
   });
 
@@ -60,5 +64,46 @@ describe('WarmupInputGroupContainer', () => {
     const button = container.querySelector('#toggle-easierSquat');
 
     fireEvent.click(button);
+  });
+
+  context('with DemoMode', () => {
+    it('can click demo button', () => {
+      useSelector.mockImplementation((selector) => selector({
+        setting: {
+          warmup: {
+            easierSquat: true,
+            easierHinge: true,
+          },
+          strengthwork: {},
+        },
+        warmups: [
+          {
+            name: 'easierSquat',
+            getEasierSquat: () => ({
+              name: 'foo',
+            }),
+          },
+          {
+            name: 'easierHinge',
+            getEasierHinge: () => ({
+              name: 'bar',
+            }),
+          },
+        ],
+        record: {
+          warmup: {},
+        },
+        demo: {
+          isDemoMode: true,
+          source: ['Demo Section'],
+        },
+      }));
+
+      const { container } = render(<WarmupInputGroupContainer />);
+
+      const button = container.querySelector('#demo-easierSquat');
+
+      fireEvent.click(button);
+    });
   });
 });

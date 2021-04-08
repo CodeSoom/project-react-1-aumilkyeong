@@ -1,10 +1,10 @@
 const bandedPallofPress = {
-  category: 'anti-rotation',
+  category: 'antiRotation',
   level: 1,
   name: 'bandedPallofPress',
   label: 'Banded Pallof Press',
   range: '8-12',
-  demos: ['https://www.youtube.com/watch?v=AH_QZLm_0-s'],
+  demos: ['https://www.youtube.com/embed/AH_QZLm_0-s'],
   tips: [
     '자세를 제어하면서 팔을 완전히 편 상태에서 잠시 멈춤',
   ],

@@ -6,7 +6,7 @@ const yuri = {
   name: 'yuri',
   label: 'Yuri\'s Shoulder Band Warmup',
   range: '5-10',
-  demos: ['https://www.youtube.com/watch?v=Vwn5hSf3WEg'],
+  demos: ['https://www.youtube.com/embed/Vwn5hSf3WEg'],
   tips: ['T셔츠 이용 가능'],
 };
 
@@ -15,7 +15,7 @@ const squatSkyReach = {
   name: 'squatSkyReach',
   label: 'Squat Sky Reach',
   range: '5-10',
-  demos: ['https://www.youtube.com/watch?v=lbozu0DPcYI&t=42s'],
+  demos: ['https://www.youtube.com/embed/lbozu0DPcYI?start=42'],
   tips: [],
 };
 
@@ -24,7 +24,7 @@ const gmbWristPrep = {
   name: 'gmbWristPrep',
   label: 'GMB Wrist Prep',
   range: '10+',
-  demos: ['https://www.youtube.com/watch?v=mSZWSQSSEjE&t=48s'],
+  demos: ['https://www.youtube.com/embed/mSZWSQSSEjE?start=48'],
   tips: ['충분히 풀릴때까지 반복'],
 };
 
@@ -47,7 +47,7 @@ const archHang = {
   name: 'archHang',
   label: 'Arch Hang',
   range: '10',
-  demos: ['https://www.youtube.com/watch?v=C995b3KLXS4&t=7s'],
+  demos: ['https://www.youtube.com/embed/C995b3KLXS4?start=7'],
   tips: [],
 };
 
@@ -56,6 +56,12 @@ const supportHold = {
   name: 'supportHold',
   label: 'Support Hold',
   range: '30s',
+  demos: ['https://antranik.org/wp-content/uploads/2014/01/antranik-holding-support-hold-on-parallel-bars.jpg'],
+  tips: [
+    '팔 곧게 펴기',
+    '몸 곧게 펴기 또는 얕은 할로우 자세',
+    '견갑골 하강 상태 유지',
+  ],
 };
 
 const easierSquat = {
