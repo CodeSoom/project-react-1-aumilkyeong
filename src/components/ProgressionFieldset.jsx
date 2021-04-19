@@ -4,7 +4,7 @@ export default function ProgressionFieldset({
   legend, category, selected, progression, handleChange,
 }) {
   return (
-    <fieldset data-testid="pullup-progression">
+    <fieldset data-testid={`${category}-progression`}>
       <legend>
         {legend}
       </legend>

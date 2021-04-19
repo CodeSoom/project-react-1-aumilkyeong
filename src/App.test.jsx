@@ -133,8 +133,8 @@ describe('App', () => {
       const { container } = renderApp({ path: '/setting' });
 
       expect(container).toHaveTextContent(/Setting/);
-      expect(container).toHaveTextContent(/준비운동/);
-      expect(container).toHaveTextContent(/근력운동/);
+      expect(container).toHaveTextContent(/Warmup/);
+      expect(container).toHaveTextContent(/Strengthwork/);
     });
   });
 

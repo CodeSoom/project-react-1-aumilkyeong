@@ -2,12 +2,12 @@ import React from 'react';
 
 import { render, fireEvent } from '@testing-library/react';
 
-import WarmupForm from './WarmupForm';
+import WarmupSetting from './WarmupSetting';
 
 jest.mock('react-redux');
 
-describe('WarmupForm', () => {
-  const config = {
+describe('WarmupSetting', () => {
+  const setting = {
     yuri: false,
     squatSkyReach: false,
     gmbWristPrep: false,
@@ -31,17 +31,17 @@ describe('WarmupForm', () => {
   const handleChange = jest.fn();
 
   it('renders warmup options', () => {
-    const { container, getByTestId } = render(
-      <WarmupForm
-        config={config}
+    const { container } = render(
+      <WarmupSetting
+        setting={setting}
         labels={labels}
         onChange={handleChange}
       />,
     );
 
-    expect(container).toHaveTextContent('준비운동');
+    expect(container).toHaveTextContent('Warmup');
 
-    const form = getByTestId('form-warmup');
+    const form = container.querySelector('#setting-warmup');
 
     expect(form).toHaveFormValues({
       yuri: false,
@@ -57,8 +57,8 @@ describe('WarmupForm', () => {
 
   it('calls the warmup select event handler', () => {
     const { getByLabelText } = render(
-      <WarmupForm
-        config={config}
+      <WarmupSetting
+        setting={setting}
         labels={labels}
         onChange={handleChange}
       />,

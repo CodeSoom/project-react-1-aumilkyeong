@@ -6,7 +6,22 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import WarmupInputGroupContainer from './WarmupInputGroupContainer';
 
+import { easierSquat, easierHinge } from '../data/warmups';
+
 jest.mock('react-redux');
+
+const easySquat = {
+  level: 0,
+  name: 'easySquat',
+};
+
+const easyHinge = {
+  level: 0,
+  name: 'easyHinge',
+};
+
+jest.spyOn(easierSquat, 'getEasierSquat').mockImplementation(jest.fn(() => easySquat));
+jest.spyOn(easierHinge, 'getEasierHinge').mockImplementation(jest.fn(() => easyHinge));
 
 describe('WarmupInputGroupContainer', () => {
   const dispatch = jest.fn();
@@ -52,9 +67,9 @@ describe('WarmupInputGroupContainer', () => {
   it('dispatches warmup workout input', () => {
     const { container } = render(<WarmupInputGroupContainer />);
 
-    const easierSquat = container.querySelector('#easierSquat');
+    const input = container.querySelector('#easierSquat');
 
-    fireEvent.change(easierSquat, { target: { value: 99 } });
+    fireEvent.change(input, { target: { value: 99 } });
     expect(dispatch).toBeCalledTimes(1);
   });
 

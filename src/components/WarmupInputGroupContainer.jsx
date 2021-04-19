@@ -5,11 +5,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setDemo, setWarmupRecord } from '../slice';
 
 import WarmupInputGroup from './WarmupInputGroup';
+
 import Demo from './Demo';
+
+import warmups from '../data/warmups';
 
 export default function WarmupInputGroupContainer() {
   const setting = useSelector((state) => state.setting.warmup);
-  const warmups = useSelector((state) => state.warmups);
   const squat = useSelector((state) => state.setting.strengthwork.squat);
   const hinge = useSelector((state) => state.setting.strengthwork.hinge);
   const record = useSelector((state) => state.record.warmup);

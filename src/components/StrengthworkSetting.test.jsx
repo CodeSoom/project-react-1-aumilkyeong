@@ -2,12 +2,12 @@ import React from 'react';
 
 import { render } from '@testing-library/react';
 
-import StrengthworkForm from './StrengthworkForm';
+import StrengthworkSetting from './StrengthworkSetting';
 
 jest.mock('react-redux');
 
-describe('StrengthworkForm', () => {
-  const config = {
+describe('StrengthworkSetting', () => {
+  const setting = {
     pullup: '',
     squat: '',
     dip: '',
@@ -35,8 +35,8 @@ describe('StrengthworkForm', () => {
 
   it('renders without crash', () => {
     render(
-      <StrengthworkForm
-        config={config}
+      <StrengthworkSetting
+        setting={setting}
         progressions={progressions}
         handleChange={handleChange}
       />,

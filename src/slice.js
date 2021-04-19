@@ -1,8 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import progressions from './data/progressions';
-import warmups from './data/warmups';
-
 const { actions, reducer } = createSlice({
   name: 'app',
   initialState: {
@@ -79,8 +76,6 @@ const { actions, reducer } = createSlice({
         },
       },
     },
-    warmups,
-    progressions,
     demo: {
       isDemoMode: false,
       source: [],
