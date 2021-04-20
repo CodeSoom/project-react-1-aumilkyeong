@@ -4,6 +4,8 @@ import { render } from '@testing-library/react';
 
 import { useSelector } from 'react-redux';
 
+import { MemoryRouter } from 'react-router-dom';
+
 import SettingPage from './Setting';
 
 jest.mock('react-redux');
@@ -48,6 +50,10 @@ describe('SettingPage', () => {
   }));
 
   it('renders without crash', () => {
-    render(<SettingPage />);
+    render(
+      <MemoryRouter>
+        <SettingPage />
+      </MemoryRouter>,
+    );
   });
 });

@@ -52,7 +52,7 @@ describe('SettingContainer', () => {
       <SettingContainer />,
     );
 
-    const yuri = container.querySelector('#yuri');
+    const yuri = container.querySelector('#warmup-yuri');
 
     fireEvent.click(yuri);
     expect(dispatch).toBeCalledTimes(1);
