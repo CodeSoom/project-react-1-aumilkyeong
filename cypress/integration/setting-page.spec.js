@@ -7,14 +7,14 @@ describe('SettingPage', () => {
     cy.get('h1')
       .should('have.text', 'Setting')
       .get('#setting-warmup')
-      .contains('h2', '준비운동')
+      .contains('h2', /Warmup/)
       .get('#setting-strengthwork')
-      .contains('h2', '근력운동');
+      .contains('h2', /Strengthwork/);
   });
 
   describe('WarmUp', () => {
     it('has default selection', () => {
-      cy.get('[data-testid="form-warmup"]')
+      cy.get('#setting-warmup')
         .find(':checked')
         .should('have.length', 4);
     });
@@ -28,7 +28,7 @@ describe('SettingPage', () => {
 
   describe('StrengthWork', () => {
     it('has default selection', () => {
-      cy.get('[data-testid="form-strengthwork"]')
+      cy.get('#setting-strengthwork')
         .within(() => {
           const defaults = [
             'pullup',

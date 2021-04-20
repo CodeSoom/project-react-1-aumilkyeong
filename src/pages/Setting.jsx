@@ -1,14 +1,12 @@
 import React from 'react';
 
-import WarmupFormContainer from '../components/WarmupFormContainer';
-import StrengthworkFormContainer from '../components/StrengthworkFormContainer';
+import SettingContainer from '../components/SettingContainer';
 
 export default function SettingPage() {
   return (
     <main>
       <h1>Setting</h1>
-      <WarmupFormContainer />
-      <StrengthworkFormContainer />
+      <SettingContainer />
     </main>
   );
 }

@@ -4,15 +4,18 @@ import { render, fireEvent } from '@testing-library/react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import WarmupFormContainer from './WarmupFormContainer';
+import SettingContainer from './SettingContainer';
 
 jest.mock('react-redux');
 
-describe('WarmupFormContainer', () => {
+describe('SettingContainer', () => {
   const dispatch = jest.fn();
 
   beforeEach(() => {
+    dispatch.mockClear();
+
     useDispatch.mockImplementation(() => dispatch);
+
     useSelector.mockImplementation((selector) => selector({
       setting: {
         warmup: {
@@ -20,33 +23,49 @@ describe('WarmupFormContainer', () => {
           squatSkyReach: false,
           gmbWristPrep: false,
           deadbug: false,
-          archHang: false,
+          negativeDip: false,
           supportHold: false,
           easierSquat: false,
           easierHinge: false,
         },
-      },
-      warmups: [
-        {
-          name: '',
-          label: '',
+        strengthwork: {
+          pullup: '',
+          squat: '',
+          verticalPushup: '',
+          hinge: '',
+          row: '',
+          pushup: '',
+          antiExtension: '',
+          antiRotation: '',
+          extension: '',
         },
-      ],
+      },
     }));
   });
 
   it('renders without crash', () => {
-    render(<WarmupFormContainer />);
+    render(<SettingContainer />);
   });
 
   it('dispatches the selected warmup', () => {
     const { container } = render(
-      <WarmupFormContainer />,
+      <SettingContainer />,
     );
 
     const yuri = container.querySelector('#yuri');
 
     fireEvent.click(yuri);
+    expect(dispatch).toBeCalledTimes(1);
+  });
+
+  it('dispatches the selected strength work', () => {
+    const { getByLabelText } = render(
+      <SettingContainer />,
+    );
+
+    const verticalPushup = getByLabelText('Vertical Pushup');
+
+    fireEvent.click(verticalPushup);
     expect(dispatch).toBeCalledTimes(1);
   });
 });
