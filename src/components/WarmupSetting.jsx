@@ -7,32 +7,15 @@ export default function WarmupSetting({ setting, labels, onChange }) {
         <h2>Warmup</h2>
       </legend>
       {Object.entries(setting).map(([exercise, isChecked]) => {
-        if (exercise === 'archHang') {
-          const prefixed = `warmup-${exercise}`;
-          return (
-            <label
-              key={exercise}
-              htmlFor={prefixed}
-            >
-              <input
-                type="checkbox"
-                id={prefixed}
-                name={exercise}
-                checked={isChecked}
-                onChange={onChange}
-              />
-              {labels[exercise]}
-            </label>
-          );
-        }
+        const prefixed = `warmup-${exercise}`;
         return (
           <label
             key={exercise}
-            htmlFor={exercise}
+            htmlFor={prefixed}
           >
             <input
               type="checkbox"
-              id={exercise}
+              id={prefixed}
               name={exercise}
               checked={isChecked}
               onChange={onChange}
